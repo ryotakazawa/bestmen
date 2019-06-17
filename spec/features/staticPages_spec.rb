@@ -2,15 +2,15 @@ require 'rails_helper'
 
 describe 'Home' do
   specify 'タイトルと画面の表示' do
-    visit '/static_pages/home'
+    visit root_path
     expect(page).to have_title 'BESTONE -1番だけをシェアしよう-'
-    expect(page).to have_css('h1', text: 'BESTONE')
+    expect(page).to have_css('h1', text: '-１番だけを、シェアしよう')
   end
 end
 
 describe 'About' do
   specify 'タイトルと画面の表示' do
-    visit '/static_pages/about'
+    visit about_path
     expect(page).to have_title 'About | BESTONE -1番だけをシェアしよう-'
     expect(page).to have_css('h1', text: 'About')
   end
