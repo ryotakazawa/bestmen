@@ -1,7 +1,8 @@
-<header class="navbar navbar-expand navbar-white bg-white fixed-top p-1">
+<nav class="navbar navbar-expand navbar-white bg-white fixed-top p-1">
       <div id="navbar-brand" href="#" >
-        <%= link_to image_tag("bestone_logo.png", class:"img-responsive", alt: "Bestone logo"),
-            root_path,  id: "logo"  %>
+        <%= link_to image_tag("bestone_logo.png", class:"img-responsive", id: "navbar-logo", alt: "Bestone logo"),
+            root_path  %>
+            
       </div>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -11,4 +12,4 @@
           <%= link_to "Log in", "#", class: "nav-link" %>
         </li>
       </ul>
-</header>
+</nav>
