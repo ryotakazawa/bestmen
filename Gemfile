@@ -15,6 +15,9 @@ group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
   gem 'rspec-rails'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -25,12 +28,10 @@ group :development do
 end
 
 group :test do
-  gem 'guard-rspec', require: false # guardでrspecを動かす
   gem 'terminal-notifier'
   gem 'terminal-notifier-guard'  # デスクトップ通知を行う
   gem 'capybara',               '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
 
 group :production do
