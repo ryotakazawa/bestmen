@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-white bg-white fixed-top p-1">
+  <nav class="navbar navbar-expand navbar-white bg-white fixed-top p-1">
       <div id="navbar-brand" href="#" >
         <%= link_to image_tag("bestone_logo.png", class:"img-fluid", id: "navbar-logo", alt: "Bestone logo"),
             root_path  %>
@@ -8,8 +8,17 @@
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Log in", "#", class: "nav-link" %>
-        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= current_user.email %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログアウト", sign_out_path, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
 </nav>
