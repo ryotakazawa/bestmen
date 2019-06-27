@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "home#top"
   get  '/about', to: 'home#about'
   
-  get 'home/show' 
+  
   
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
@@ -15,9 +15,8 @@ Rails.application.routes.draw do
     get "sign_in", :to => "users/sessions#new"
     get "sign_out", :to => "users/sessions#destroy" 
   end
-
   
-  
+  resources :users, only: [:show]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
