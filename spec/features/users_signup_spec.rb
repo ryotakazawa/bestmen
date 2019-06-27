@@ -1,22 +1,22 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.feature "UsersSignup", type: :feature do
-
+RSpec.feature 'UsersSignup', type: :feature do
   include SupportModule
   # subject { page }
 
-  describe "signup" do
-    before { visit "/signup" }
-    it_behaves_like "signup-form have right css"
-    
-    context "valid info" do
-      it_behaves_like "success create user"
+  describe 'signup' do
+    before { visit '/signup' }
+    it_behaves_like 'signup-form have right css'
+
+    context 'valid info' do
+      it_behaves_like 'success create user'
     end
-    
-    context "invalid info" do
+
+    context 'invalid info' do
       # 失敗 (increment: 0)
-      it_behaves_like "fail create user"
+      it_behaves_like 'fail create user'
     end
-    
   end
 end

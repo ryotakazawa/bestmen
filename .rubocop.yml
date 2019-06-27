@@ -1,0 +1,8 @@
+inherit_from: .rubocop_todo.yml
+
+Style/AsciiComments:
+  Enabled: false
+
+# 一行に 120 文字まで書いても OK とする
+Metrics/LineLength:
+  Max: 120
