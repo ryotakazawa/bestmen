@@ -7,7 +7,7 @@ RSpec.feature 'UsersSignup', type: :feature do
   # subject { page }
 
   describe 'signup' do
-    before { visit '/signup' }
+    before { visit '/users/sign_up' }
     it_behaves_like 'signup-form have right css'
 
     context 'valid info' do

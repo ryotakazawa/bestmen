@@ -7,9 +7,7 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
+    <%= render 'layouts/flash_message' %>
     <div class="container">
       <%= yield %>
       <%= render 'layouts/footer' %>

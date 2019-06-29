@@ -6,7 +6,7 @@ describe 'Home' do
   specify 'タイトルと画面の表示' do
     visit root_path
     expect(page).to have_title 'BESTONE -1番だけをシェアしよう-'
-    expect(page).to have_css('h1', text: '-１番だけを、シェアしよう')
+    expect(page).to have_css('h1', text: '- １番じゃなきゃ、ダメなんです。 -')
   end
 end
 

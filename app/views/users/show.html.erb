@@ -1,4 +1,5 @@
 <% provide(:title, @user.name) %>
+
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
@@ -9,3 +10,37 @@
     </section>
   </aside>
 </div>
+
+<!-- Card Regular -->
+<div class="card card-cascade">
+
+  <!-- Card image -->
+  <div class="view view-cascade overlay">
+    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap">
+    <a>
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade text-center">
+
+    <!-- Title -->
+    <h4 class="card-title"><strong><%= @user.name %></strong></h4>
+    <!-- Subtitle -->
+    <h6 class="font-weight-bold indigo-text py-2">Web developer</h6>
+    <!-- Text -->
+    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
+    </p>
+
+    <!-- Facebook -->
+    <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
+    <!-- Twitter -->
+    <a type="button" class="btn-floating btn-small btn-tw"><i class="fab fa-twitter"></i></a>
+    <!-- Google + -->
+    <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fab fa-dribbble"></i></a>
+
+  </div>
+
+</div>
+<!-- Card Regular -->

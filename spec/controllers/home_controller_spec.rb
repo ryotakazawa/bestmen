@@ -3,16 +3,16 @@
 require 'rails_helper'
 
 RSpec.describe HomeController, type: :controller do
-  describe 'GET #index' do
-    it 'returns http success' do
-      get :index
-      expect(response).to have_http_status(:success)
-    end
-  end
+  #describe 'GET #top' do
+    #it 'returns http success' do
+      #get root_path
+      #expect(response).to have_http_status(:success)
+    #end
+  #end
 
-  describe 'GET #show' do
+  describe 'GET #about' do
     it 'returns http success' do
-      get :show
+      get :about
       expect(response).to have_http_status(:success)
     end
   end
