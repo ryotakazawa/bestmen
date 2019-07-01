@@ -1,5 +1,7 @@
-<%= link_to "投稿する", new_pic_path %>
+
 <% @pics.each do |pic| %>
-  <%= link_to image_tag(pic.image.url(:medium)), pic %>
-  <%= link_to pic.title, pic %>
+  <div class="card", style="width: 20rem;">
+    <div class="card-img-top"><%= link_to image_tag(pic.image.url(:medium)), pic %></div>
+    <div class="card-body"><h2><%= link_to pic.title, pic %></h2></div>
+  </div>
 <% end %>
