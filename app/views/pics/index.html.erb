@@ -1,0 +1,5 @@
+<%= link_to "投稿する", new_pic_path %>
+<% @pics.each do |pic| %>
+  <%= link_to image_tag(pic.image.url(:medium)), pic %>
+  <%= link_to pic.title, pic %>
+<% end %>

@@ -15,9 +15,10 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'puma', '3.9.1'
 gem 'rails', '5.1.6'
-gem 'sass-rails'
 gem 'turbolinks',   '5.0.1'
 gem 'uglifier',     '3.2.0'
+gem 'simple_form'
+gem 'paperclip'
 
 group :development, :test do
   gem 'byebug', '9.0.6', platform: :mri

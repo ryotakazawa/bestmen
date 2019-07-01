@@ -1,0 +1,16 @@
+<div id="edit_page" class="col-md-8 col-md-offset-2">
+	<div class="row">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			 <h1>編集</h1>
+			</div>
+			<div class="panel-body">
+				<div class="current_image">
+					<strong class="center">Right Now</strong>
+					<%= link_to image_tag(@pic.image.url(:medium)) %>
+				</div>
+			 <%= render "pics/form"%>
+			</div>
+		</div>
+	</div>
+</div>

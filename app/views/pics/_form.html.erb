@@ -1,0 +1,14 @@
+<%= simple_form_for @pic, html:{multipart: true} do |f| %>
+  <% if @pic.errors.any? %>
+    <h2>入力エラーが<%= pluralize(@pic.errors.count, "箇所") %>あります</h2>
+    <ul>
+      <% @pic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= f.input :image, as: :file , input_html: { class: 'form-controll'} %>
+  <%= f.input :title, input_html: { class: 'form-controll'} %>
+  <%= f.input :description, input_html: { class: 'form-controll'} %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

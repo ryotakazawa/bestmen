@@ -5,7 +5,13 @@
             
       </div>
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "名店一覧", pics_path, class: "nav-link" %>
+        </li>
         <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "投稿する", new_pic_path, class: "nav-link" %>
+          </li>
           <li class="nav-item">
             <%= link_to "ログアウト", sign_out_path, class: "nav-link" %>
           </li>
