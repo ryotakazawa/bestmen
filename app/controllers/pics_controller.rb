@@ -10,7 +10,7 @@ class PicsController < ApplicationController
   end
   
   def show
-    @pic = Pic.find_by(params[:id])
+    
   end
   
   def create
@@ -45,6 +45,6 @@ class PicsController < ApplicationController
     end
     
     def find_pic
-      @pic = Pic.find_by(params[:id])
+      @pic = Pic.find_by(id: params[:id])
     end
 end
