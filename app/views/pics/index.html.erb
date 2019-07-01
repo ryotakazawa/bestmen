@@ -1,6 +1,27 @@
-<% @pics.each do |pic| %>
-  <div class="card", style="width: 20rem;">
-    <div class="card-img-top"><%= link_to image_tag(pic.image.url(:medium)), pic %></div>
-    <div class="card-body"><h2><%= link_to pic.title, pic %></h2></div>
+<div class="container">
+  <!-- .grid-indexでCards全体をネストする -->
+  <div class="grid-index">
+    <!-- ウインドウサイズごとにグリッドサイズを定義。スマホだと横に1つ、タブレットだと2つ、PCだと3つ並べる -->
+    <div class="grid-sizer col-12 col-sm-6 col-lg-4"></div>
+    
+    <div class="card-group">
+      <% @pics.each do |pic| %>
+        <div class="grid-item col-12 col-sm-6 col-lg-4">
+          <div class="card text-center">
+            <div class="card-block">
+              <div class="card-img-top">
+                <%= link_to image_tag(pic.image.url(:medium)), pic %>
+              </div>
+              <div class="card-title">
+                <h5><%= link_to pic.title, pic %></h5>
+              </div>
+              <div class="card-text">
+                <%= link_to pic.description, pic %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
