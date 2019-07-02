@@ -36,7 +36,13 @@ class PicsController < ApplicationController
   
   def destroy
     @pic.destroy
-    redirect_to root_path
+    lastpath = Rails.application.routes.recognize_path(request.referer)
+    if lastpath[:controller] == "users"
+      redirect_to user_path(@pic.user_id)
+    else
+      redirect_to pics_path
+    end
+    
   end
   
   private
