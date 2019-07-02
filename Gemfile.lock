@@ -92,6 +92,8 @@ GEM
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
+    font-awesome-sass (5.8.1)
+      sassc (>= 1.11)
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -327,6 +329,7 @@ DEPENDENCIES
   devise-i18n
   devise-i18n-views
   factory_bot_rails
+  font-awesome-sass (~> 5.8.1)
   guard
   guard-rspec
   jbuilder (= 2.7.0)

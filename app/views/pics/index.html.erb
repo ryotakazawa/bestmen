@@ -18,6 +18,20 @@
               <div class="card-text">
                 <%= link_to pic.description, pic %>
               </div>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-md-6">
+                    <p><%= link_to pic.user.name, user_path(pic.user) %></br>のベストメン</p>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="btn-group pull-right">
+                      <% if user_signed_in? %>
+                        <%= link_to "編集", edit_pic_path(pic) %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
