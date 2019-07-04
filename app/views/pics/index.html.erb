@@ -25,6 +25,9 @@
                   </div>
                   <div class="col-md-6">
                     <div class="btn-group pull-right">
+                      <div class="btn btn-default">
+                        <%= render partial: 'pics/like', locals: { pic: pic} %>
+                      </div>
                       <% if user_signed_in? %>
                         <div class="btn btn-info"><%= link_to "編集", edit_pic_path(pic) %></div>
                         <div class="btn btn-danger"><%= link_to "削除", pic_path(pic), method: :delete, data: {confirm: "一度削除した投稿は復元できません。よろしいですか？"} %></div>

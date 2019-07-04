@@ -17,5 +17,6 @@ module Bestone
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = :ja
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end

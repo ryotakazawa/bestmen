@@ -1,0 +1,11 @@
+<% if current_user.liked? pic %>
+  <%= link_to unlike_pic_path(pic), method: :put, remote: true, id: "like_#{pic.id}" do %>
+    <span class="fas fa-heart"></span>
+    <%= pic.get_likes.size %>
+  <% end %>
+<% else %>
+  <%= link_to like_pic_path(pic), method: :put, remote: true, id: "like_#{pic.id}" do %>
+    <span class="far fa-heart"></span>
+    <%= pic.get_likes.size %>
+  <% end %>
+<% end %>

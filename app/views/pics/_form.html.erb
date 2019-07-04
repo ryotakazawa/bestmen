@@ -7,8 +7,8 @@
       <% end %>
     </ul>
   <% end %>
-  <%= f.input :image, as: :file , input_html: { class: 'form-controll'} %>
-  <%= f.input :title, input_html: { class: 'form-controll'} %>
-  <%= f.input :description, input_html: { class: 'form-controll'} %>
+  <%= f.input :image, label: '画像', as: :file , input_html: { class: 'form-controll'} %>
+  <%= f.input :title, label: '店名', input_html: { class: 'form-controll'} %>
+  <%= f.input :description, label: '説明', input_html: { class: 'form-controll'} %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

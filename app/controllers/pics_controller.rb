@@ -1,5 +1,7 @@
 class PicsController < ApplicationController
-  before_action :find_pic, only:[:show, :edit, :update, :destroy]
+  before_action :find_pic, only:[:show, :edit, :update, :destroy, :like, :unlike]
+  before_action :authenticate_user!, except:[:index, :show]
+  before_action :lastpath, only:[:destroy, :upvote]
   
   def index
     @pics = Pic.all.order("created_at DESC")
@@ -36,14 +38,29 @@ class PicsController < ApplicationController
   
   def destroy
     @pic.destroy
-    lastpath = Rails.application.routes.recognize_path(request.referer)
     if lastpath[:controller] == "users"
       redirect_to user_path(@pic.user_id)
     else
       redirect_to pics_path
     end
-    
   end
+  
+  def like
+    @pic.liked_by current_user
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+  end
+  
+  def unlike
+    @pic.unliked_by current_user
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+  end
+  
   
   private
     def pic_params
@@ -52,5 +69,9 @@ class PicsController < ApplicationController
     
     def find_pic
       @pic = Pic.find_by(id: params[:id])
+    end
+    
+    def lastpath
+      lastpath = Rails.application.routes.recognize_path(request.referer)
     end
 end

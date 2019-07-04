@@ -20,6 +20,7 @@ gem 'uglifier',     '3.2.0'
 gem 'simple_form'
 gem 'paperclip'
 gem 'font-awesome-sass', '~> 5.8.1'
+gem 'acts_as_votable'
 
 group :development, :test do
   gem 'byebug', '9.0.6', platform: :mri
