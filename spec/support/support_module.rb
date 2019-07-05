@@ -15,4 +15,17 @@ module SupportModule
       fill_in 'パスワード確認(もう一度同じパスワードを入力してください)', with: params[:password]
     end
   end
+  
+  def fill_in_pic_new_form(pic, option = { invalid: false })
+    if option[:invalid]
+      attach_file '画像',                                       with: ''
+      fill_in 'pic_title',                                      with: ''
+      fill_in '選考理由',                                       with: ''
+    else
+      params = attributes_for(pic)
+      attach_file '画像',                                       with: params[:image]
+      fill_in 'pic_title',                                      with: params[:title]
+      fill_in '選考理由',                                       with: params[:description]
+    end
+  end
 end
