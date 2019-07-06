@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'comments/create'
+
   # devise_for :users
   root to: 'home#top'
   get  '/about', to: 'home#about'
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
       put "like", to: "pics#like"
       put "unlike", to: "pics#unlike"
     end
+    resources :comments, only: [:index, :show, :create, :destroy]
   end
   
   

@@ -8,6 +8,10 @@ ja:
         password: "パスワード"
         password_confirmation: "パスワード確認(もう一度同じパスワードを入力してください)"
         remember_me: "ログインを記憶"
+      pic:
+        image: "画像"
+        title: "店名"
+        description: "認定理由"
     models:
       user: "ユーザ"
   devise:

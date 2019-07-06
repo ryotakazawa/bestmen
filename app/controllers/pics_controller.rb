@@ -12,7 +12,8 @@ class PicsController < ApplicationController
   end
   
   def show
-    
+    @comment = Comment.new
+    @comments = @pic.comments
   end
   
   def create
@@ -46,18 +47,14 @@ class PicsController < ApplicationController
   end
   
   def like
-    @pic.liked_by current_user
-    respond_to do |format|
-      format.html { redirect_to :back }
-      format.js
+    if @pic.liked_by current_user
+      render :like
     end
   end
   
   def unlike
-    @pic.unliked_by current_user
-    respond_to do |format|
-      format.html { redirect_to :back }
-      format.js
+    if @pic.unliked_by current_user
+      render :like
     end
   end
   
