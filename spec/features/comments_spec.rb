@@ -1,9 +1,11 @@
 require 'rails_helper'
 
-RSpec.feature 'CommentsCreate', type: :feature do
+RSpec.feature 'Comments', type: :feature do
   include SupportModule
+  let(:user) { create(:user) }
+  
 
-  describe 'signup' do
+  describe 'CreateComment' do
     before { visit '/users/' }
      it_behaves_like 'signup-form have right css'
 

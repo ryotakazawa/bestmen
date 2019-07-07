@@ -9,6 +9,8 @@
   <% end %>
   <%= f.input :image, label: '画像', as: :file , input_html: { class: 'form-controll'} %>
   <%= f.input :title, label: '店名', input_html: { class: 'form-controll'} %>
+  <p>ジャンル</p>
+  <%= f.select :tag_list,  [["醤油", "醤油"],["塩", "塩"],["味噌", "味噌"],["豚骨", "豚骨"],["担々麺", "担々麺"],["家系", "家系"],["魚介系", "魚介系"],["激辛系", "激辛系"],["その他", "その他"]], :include_blank => true, label: '店名', input_html: { class: 'form-controll'} %>
   <%= f.input :description, label: '認定理由', input_html: { class: 'form-controll'} %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

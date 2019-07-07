@@ -5,6 +5,9 @@ class PicsController < ApplicationController
   
   def index
     @pics = Pic.all.order("created_at DESC")
+    if params[:tag_name]
+      @pics = Pic.tagged_with(params[:tag_name])
+    end
   end
   
   def new
@@ -61,7 +64,7 @@ class PicsController < ApplicationController
   
   private
     def pic_params
-      params.require(:pic).permit(:title, :description, :image)
+      params.require(:pic).permit(:title, :description, :image, :tag_list)
     end
     
     def find_pic

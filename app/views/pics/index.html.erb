@@ -14,9 +14,10 @@
               </div>
               <div class="card-title">
                 <h5><%= link_to pic.title, pic %></h5>
+                <%= link_to pic.tag_list, pics_path(tag_name: pic.tag_list) %>
               </div>
               <div class="card-text">
-                <%= link_to pic.description, pic %>
+                <%= pic.description %>
               </div>
               <div class="card-footer">
                 <div class="row">
