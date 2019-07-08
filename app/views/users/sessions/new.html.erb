@@ -23,4 +23,11 @@
   </div>
 <% end %>
 
+<%= form_for(resource, as: resource_name, url: user_session_path) do |f| %>
+  <%= f.hidden_field :email, {value: 'test@bestmen.com'} %>
+  <%= f.hidden_field :password, {value: 'password'} %>
+  <%= f.submit "簡単ログイン", class: "submit-btn" %>
+  <p>※ポートフォリオ観覧用のログインです。テストユーザーでログインします</p>
+<% end %>
+
 <%= render "users/shared/links" %>
