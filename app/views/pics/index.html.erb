@@ -3,7 +3,9 @@
   <div class="grid-index">
     <!-- ウインドウサイズごとにグリッドサイズを定義。スマホだと横に1つ、タブレットだと2つ、PCだと3つ並べる -->
     <div class="grid-sizer col-12 col-sm-6 col-lg-4"></div>
-    
+    <div class="sort">
+      <%= render partial: 'pics/tags' %>
+    </div>
     <div class="card-group">
       <% @pics.each do |pic| %>
         <div class="grid-item col-12 col-sm-6 col-lg-4">
