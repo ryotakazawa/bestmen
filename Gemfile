@@ -13,10 +13,12 @@ gem 'jquery-rails', '4.3.1'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
 gem 'puma', '3.9.1'
 gem 'rails', '5.1.6'
-gem 'turbolinks',   '5.0.1'
+gem 'turbolinks',   '5.0.1' 
 gem 'uglifier',     '3.2.0'
+gem 'dotenv-rails'
 gem 'simple_form'
 gem 'paperclip'
 gem 'font-awesome-sass', '~> 5.8.1'
@@ -49,7 +51,7 @@ end
 
 group :production do
   gem 'pg', '0.20.0'
-  gem 'rails_12factor'
+  gem 'rails_12factor'  #RailsアプリケーションをHerokuで動作をさせることを目的としているGem
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります

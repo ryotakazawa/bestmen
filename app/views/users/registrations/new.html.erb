@@ -1,5 +1,9 @@
 <% provide(:title, "新規登録") %>
 
+<%= link_to 'Twitterアカウントで登録', user_twitter_omniauth_authorize_path  %>
+<%= link_to 'Facebookアカウントで登録', user_facebook_omniauth_authorize_path  %>
+<%= link_to 'Googleアカウントで登録', user_google_oauth2_omniauth_authorize_path  %>
+
 <h1>新規登録</h1>
 <div class="row">
   <div class="mx-auto col-md-6 ">
@@ -36,4 +40,3 @@
     <%= render "users/shared/links" %>
   </div>
 </div>
-    
