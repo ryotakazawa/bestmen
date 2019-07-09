@@ -5,13 +5,13 @@ class PicsController < ApplicationController
   
   def index
     @search = Pic.ransack(params[:q])
-    
+ 
     if params[:q]
-      @pics = @search.result
+      @pics = @search.result.includes(:user, :taggings)
     elsif params[:tag_name]
-      @pics = Pic.tagged_with(params[:tag_name])
+      @pics = Pic.tagged_with(params[:tag_name]).includes(:user, :taggings)
     else
-      @pics = Pic.all.order("created_at DESC")
+      @pics = Pic.all.order("created_at DESC").includes(:user, :taggings)
     end
   end
   
@@ -21,7 +21,7 @@ class PicsController < ApplicationController
   
   def show
     @comment = Comment.new
-    @comments = @pic.comments
+    @comments = @pic.comments.includes(:user)
   end
   
   def create

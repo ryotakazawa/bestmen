@@ -54,6 +54,9 @@ GEM
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
     builder (3.2.3)
+    bullet (6.0.1)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     byebug (9.0.6)
     capybara (2.18.0)
       addressable
@@ -326,6 +329,7 @@ GEM
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.6.0)
+    uniform_notifier (1.12.1)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.5.1)
@@ -347,6 +351,7 @@ DEPENDENCIES
   acts_as_votable
   bcrypt
   bootstrap
+  bullet
   byebug (= 9.0.6)
   capybara (~> 2.13)
   coffee-rails (= 4.2.2)

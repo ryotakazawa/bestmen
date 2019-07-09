@@ -33,6 +33,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rspec-rails'
   gem 'sqlite3', '1.3.13'
+  gem 'bullet'
 end
 
 group :development do
