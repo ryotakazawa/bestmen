@@ -6,6 +6,13 @@
     <div class="sort">
       <%= render partial: 'pics/tags' %>
     </div>
+    
+    <div class="no-posts">
+      <% if @pics == [] %>
+        <h3>まだ投稿はありません。</br>最初の登録者になりましょう！</h3>
+      <% end %>
+    </div>
+    
     <div class="card-group">
       <% @pics.each do |pic| %>
         <div class="grid-item col-12 col-sm-6 col-lg-4">

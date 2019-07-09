@@ -64,6 +64,7 @@ GEM
       xpath (>= 2.0, < 4.0)
     childprocess (1.0.1)
       rake (< 13.0)
+    choice (0.2.0)
     climate_control (0.2.0)
     coderay (1.1.2)
     coffee-rails (4.2.2)
@@ -218,6 +219,11 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
+    rails-erd (1.6.0)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
     rails_12factor (0.0.3)
@@ -233,6 +239,11 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (3.0.0)
     rake (12.3.2)
+    ransack (2.1.1)
+      actionpack (>= 5.0)
+      activerecord (>= 5.0)
+      activesupport (>= 5.0)
+      i18n
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -267,6 +278,7 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
+    ruby-graphviz (1.2.4)
     ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     rubyzip (1.2.3)
@@ -357,7 +369,9 @@ DEPENDENCIES
   pg (= 0.20.0)
   puma (= 3.9.1)
   rails (= 5.1.6)
+  rails-erd
   rails_12factor
+  ransack
   rspec-rails
   rubocop
   selenium-webdriver

@@ -4,9 +4,14 @@ class PicsController < ApplicationController
   before_action :lastpath, only:[:destroy, :upvote]
   
   def index
-    @pics = Pic.all.order("created_at DESC")
-    if params[:tag_name]
+    @search = Pic.ransack(params[:q])
+    
+    if params[:q]
+      @pics = @search.result
+    elsif params[:tag_name]
       @pics = Pic.tagged_with(params[:tag_name])
+    else
+      @pics = Pic.all.order("created_at DESC")
     end
   end
   

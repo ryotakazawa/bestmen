@@ -24,6 +24,7 @@ gem 'paperclip'
 gem 'font-awesome-sass', '~> 5.8.1'
 gem 'acts_as_votable'
 gem 'acts-as-taggable-on'
+gem 'ransack'
 
 group :development, :test do
   gem 'byebug', '9.0.6', platform: :mri
@@ -40,6 +41,7 @@ group :development do
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
   gem 'web-console',           '3.5.1'
+  gem 'rails-erd'
 end
 
 group :test do
