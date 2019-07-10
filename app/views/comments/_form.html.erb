@@ -1,4 +1,4 @@
 <%= simple_form_for [@pic, @pic.comments.build], remote: true do |f| %>
   <%= f.input :content %>
-  <%= f.button :submit %>
+  <%= f.button :submit , class: "btn btn-primary" %>
 <% end %>

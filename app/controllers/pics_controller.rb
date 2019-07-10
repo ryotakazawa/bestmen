@@ -22,6 +22,7 @@ class PicsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @pic.comments.includes(:user)
+    
   end
   
   def create
