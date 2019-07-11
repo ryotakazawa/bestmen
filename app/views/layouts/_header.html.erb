@@ -1,24 +1,27 @@
-  <nav class="navbar navbar-expand navbar-white bg-white fixed-top p-1">
-      <div id="navbar-brand" href="#" >
-        <%= link_to image_tag("bestone_logo.png", class:"img-fluid", id: "navbar-logo", alt: "Bestone logo"),
-            root_path  %>
-            
-      </div>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <%= link_to "名店一覧", pics_path, class: "nav-link" %>
-        </li>
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "認定する", new_pic_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to current_user.name, user_path(current_user), class: "nav-link"  %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
-          </li>
+<nav class="navbar navbar-expand navbar-white bg-white fixed-top p-1">
+  <div id="navbar-brand" href="#" >
+    <%= link_to image_tag("bestone_logo.png", class:"img-fluid", id: "navbar-logo", alt: "Bestone logo"),
+        root_path  %>
+  </div>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item span">
+      <%= link_to pics_path, class: "nav-link" do %>
+        <div class="select">名店一覧</div>
+      <% end %>
+    </li>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to new_pic_path, class: "nav-link" do %>
+          <div class="select">認定する</div>
         <% end %>
-      </ul>
+      </li>
+      <li class="nav-item">
+        <%= link_to current_user.name, user_path(current_user), class: "nav-link"  %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+      </li>
+    <% end %>
+  </ul>
 </nav>

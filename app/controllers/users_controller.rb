@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find_by(id: params[:id])
-    @pics = Pic.where(user_id: params[:id])
+    @pics = Pic.where(user_id: params[:id]).includes(:user)
   end
   
 end

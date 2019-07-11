@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3', '1.3.13'
   gem 'bullet'
+  gem "omniauth-rails_csrf_protection"
 end
 
 group :development do
