@@ -1,0 +1,16 @@
+<% provide(:title, "マップから探す") %>
+
+<div style='width: 100%;'>
+  <div id="map" style='height: 600px;'></div>
+</div>
+
+<script>
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  handler.getMap().setCenter(new google.maps.LatLng(35.681298, 139.7640582));
+  handler.getMap().setZoom(13);
+});
+</script>

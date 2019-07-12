@@ -9,6 +9,11 @@
         <div class="select">名店一覧</div>
       <% end %>
     </li>
+    <li class="nav-item span">
+      <%= link_to maps_path, class: "nav-link" do %>
+        <div class="select">マップから探す</div>
+      <% end %>
+    </li>
     <% if user_signed_in? %>
       <li class="nav-item">
         <%= link_to new_pic_path, class: "nav-link" do %>
