@@ -1,10 +1,16 @@
 class MapsController < ApplicationController
   def index
     @pics = Pic.all
-    @hash = Gmaps4rails.build_markers(@pics) do |pic, marker|
-      marker.lat pic.latitude
-      marker.lng pic.longitude
-      marker.infowindow pic.title
+    @pic = Pic.first
+    
+    @array_pics = []
+    @pics.each do |pic|
+      @array_pics << pic
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @array_pics }
     end
   end
 end
