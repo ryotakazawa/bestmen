@@ -1,0 +1,6 @@
+ <% @pics.each do |pic| %>
+    var marker<% pic.id %> = new google.maps.Marker({
+            position:{lat:<%= pic.latitude %>, lng: <%= pic.longitude %>},
+            map: map
+        });
+    <% end %>

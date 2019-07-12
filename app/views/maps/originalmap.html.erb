@@ -1,8 +1,19 @@
-<% provide(:title, "マップから探す") %>
+<div style='width: 100%;'>
+  <div id="map" style='height: 600px;'></div>
+</div>
 
-<input id="pac-input" class="controls" type="text" placeholder="地名や店名で検索">
-<div id="map" style='height: 600px;'></div>
-    
+<script>
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  handler.getMap().setCenter(new google.maps.LatLng(35.681298, 139.7640582));
+  handler.getMap().setZoom(13);
+});
+</script>
+
+
 <script>
   // This example adds a search box to a map, using the Google Place Autocomplete
   // feature. People can enter geographical searches. The search box will return a
@@ -28,21 +39,6 @@
     map.addListener('bounds_changed', function() {
       searchBox.setBounds(map.getBounds());
     });
-    
-
-     // データを読み込み
-  	var markerData = <%=  raw @array_pics.to_json %>;
-  	
-  	for (i = 0;i < markerData.length;i++) {
-  		// マーカーを生成
-  		var marker = new google.maps.Marker({
-  		    position: new google.maps.LatLng(markerData[i].latitude, markerData[i].longitude),
-  		    title: markerData[i].title
-  		});
-  		// マーカーを地図に表示
-  		marker.setMap(map);
-  	}
-  	
 
     
     // Listen for the event fired when the user selects a prediction and retrieve
@@ -54,7 +50,11 @@
         return;
       }
 
-      
+      // Clear out the old markers.
+      markers.forEach(function(marker) {
+        marker.setMap(null);
+      });
+      markers = [];
 
       // For each place, get the icon, name and location.
       var bounds = new google.maps.LatLngBounds();
@@ -71,7 +71,14 @@
           scaledSize: new google.maps.Size(25, 25)
         };
 
-        
+        // Create a marker for each place.
+        markers.push(new google.maps.Marker({
+          map: map,
+          icon: icon,
+          title: place.name,
+          position: place.geometry.location
+        }));
+
         if (place.geometry.viewport) {
           // Only geocodes have viewport.
           bounds.union(place.geometry.viewport);
@@ -84,3 +91,9 @@
   }
 
 </script>
+    
+    @hash = Gmaps4rails.build_markers(@pics) do |pic, marker|
+      marker.lat pic.latitude
+      marker.lng pic.longitude
+      marker.infowindow pic.title
+    end
