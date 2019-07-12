@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  
+
   # devise_for :users
   root to: 'home#top'
   get  '/about', to: 'home#about'
@@ -26,6 +28,8 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
+  
+  resources :maps, only: [:index]
   
   
 

@@ -1,3 +1,5 @@
+<% provide(:title, @pic.title) %>
+
 <%= link_to image_tag(@pic.image.url(:medium)), @pic %>
 <h1><%= @pic.title %></h1>
 <%= link_to @pic.tag_list, pics_path(tag_name: @pic.tag_list) %>
