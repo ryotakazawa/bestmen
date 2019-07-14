@@ -1,9 +1,14 @@
-<nav class="navbar navbar-expand navbar-white bg-white fixed-top p-auto">
-  <div id="navbar-brand" href="#" >
-    <%= link_to image_tag("bestone_logo.png", class:"img-fluid", id: "navbar-logo", alt: "Bestone logo"),
+<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #cc0000;">
+  <div class="navbar-brand">
+    <%= link_to image_tag("logo.png", alt: "Bestmen logo", width: '150x'),
         root_path  %>
   </div>
-  <ul class="navbar-nav ml-auto">
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#bs-navi" aria-controls="bs-navi" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+  <div class="collapse navbar-collapse" id="bs-navi">
+    <ul class="navbar-nav ml-auto">
     <li class="nav-item span">
       <%= link_to pics_path, class: "nav-link" do %>
         <div class="select">名店一覧</div>
@@ -29,4 +34,5 @@
       </li>
     <% end %>
   </ul>
+  </div>
 </nav>

@@ -1,0 +1,28 @@
+<% provide(:title, @user.name) %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="user_profile">
+      <section class="user_info">
+        <%= render "shared/user_info" %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+      <div>
+      <section class="follow_form">
+        <%= render 'follow_form' %>
+      </section>
+      <section class="profile_edit">
+        <%= render 'shared/profile_edit' %>
+      </section>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <% if @user.microposts.any? %>
+    <div class="micropost_image">
+      <%= render @microposts %>
+    </div>
+  <% end %>
+</div>
