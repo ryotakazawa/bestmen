@@ -16,6 +16,12 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import "comments";
+@import "home";
+@import "maps";
+@import "pics";
+@import "static_pages";
+@import "users";
 
 
 /* mixins, variables, etc. */
@@ -76,10 +82,50 @@ p {
   line-height: 1.7em;
 }
 
+/* container */
+.container-small, .container-large {
+    max-width: 100%;
+}
+@media (min-width: 768px) {
+    .container-small {
+        width: 300px;
+    }
+    .container-large {
+        width: 970px;
+    }
+}
+@media (min-width: 992px) {
+    .container-small {
+        width: 500px;
+    }
+    .container-large {
+        width: 1170px;
+    }
+}
+@media (min-width: 1200px) {
+    .container-small {
+        width: 700px;
+    }
+    .container-large {
+        width: 1500px;
+    }
+}
+
 
 /* header */
 .navbar-nav{
   padding-right: 50px;
+}
+.navbar-brand{
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+.nav-item{
+  color: white;
+}
+.navbar-toggler .navbar-toggler-icon {
+  outline:none;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 /*flash*/
@@ -189,6 +235,8 @@ input {
 /*select*/
 .select {
   position: relative;
+  color: white;
+  margin-right: 5px;
 }
 
 .select::before, .select::after {
@@ -197,7 +245,7 @@ input {
   top: 0;
   bottom: 0;
   width: 2px;
-  background-color: #fc2f70;
+  background-color: white;
   transform-origin: center;
   transform: scaleY(0);
   transition: transform 0.5s ease;

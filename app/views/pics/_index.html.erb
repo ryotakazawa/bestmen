@@ -1,20 +1,14 @@
-<div class="card-group">
+<div class="row">
   <% @pics.each do |pic| %>
-    <div class="grid-item col-12 col-sm-6 col-lg-4">
-      <div class="card text-center">
-        <div class="card-block">
-          <div class="card-img-top">
-            <div class="hover-parent">
-              <%= link_to image_tag(pic.image.url(:medium),size: '300x300'), pic, remote: true %>
-              <%= link_to pic, remote: true do %>
-              <div class="mask">
-                <div class="caption"><%= pic.title %></div>
-                <%= pic.get_likes.size %>
-              </div>
-              <% end %>
-            </div >
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="hover-parent d-block mx-auto">
+        <%= link_to image_tag(pic.image.url(:medium), size: '300x300'), pic, remote: true %>
+        <%= link_to pic, remote: true do %>
+          <div class="mask text-center">
+            <div class="caption"><%= pic.title %></div>
+            <%= pic.get_likes.size %>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   <% end %>

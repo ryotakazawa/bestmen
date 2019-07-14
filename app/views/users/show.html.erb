@@ -1,89 +1,241 @@
-<% provide(:title, @user.name) %>
-
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
-
-<!-- Card Regular -->
-<div class="card card-cascade">
-
-  <!-- Card image -->
-  <div class="view view-cascade overlay">
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap">
-    <a>
-      <div class="mask rgba-white-slight"></div>
-    </a>
-  </div>
-
-  <!-- Card content -->
-  <div class="card-body card-body-cascade text-center">
-
-    <!-- Title -->
-    <h4 class="card-title"><strong><%= @user.name %></strong></h4>
-    <!-- Subtitle -->
-    <h6 class="font-weight-bold indigo-text py-2">Web developer</h6>
-    <!-- Text -->
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
-    </p>
-
-    <!-- Facebook -->
-    <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
-    <!-- Twitter -->
-    <a type="button" class="btn-floating btn-small btn-tw"><i class="fab fa-twitter"></i></a>
-    <!-- Google + -->
-    <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fab fa-dribbble"></i></a>
-
-  </div>
-  <%= link_to "ログアウト", sign_out_path %>
-
-</div>
-<!-- Card Regular -->
 <div class="container">
-  <!-- .grid-indexでCards全体をネストする -->
-  <div class="grid-index">
-    <!-- ウインドウサイズごとにグリッドサイズを定義。スマホだと横に1つ、タブレットだと2つ、PCだと3つ並べる -->
-    <div class="grid-sizer col-12 col-sm-6 col-lg-4"></div>
-    
-    <div class="card-group">
-      <% @pics.each do |pic| %>
-        <div class="grid-item col-12 col-sm-6 col-lg-4">
-          <div class="card text-center">
-            <div class="card-block">
-              <div class="card-img-top">
-                <%= link_to image_tag(pic.image.url(:medium)), pic %>
-              </div>
-              <div class="card-title">
-                <h5><%= link_to pic.title, pic %></h5>
-              </div>
-              <div class="card-text">
-                <%= link_to pic.description, pic %>
-              </div>
-              <div class="card-footer">
-                <div class="row">
-                  <div class="col-md-6">
-                    <p><%= link_to pic.user.name, user_path(pic.user) %>さん</br>のベストメン</p>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="btn-group pull-right">
-                      <% if user_signed_in? %>
-                        <div class="btn btn-info"><%= link_to "編集", edit_pic_path(pic) %></div>
-                        <div class="btn btn-danger"><%= link_to "削除", pic_path(pic), method: :delete, data: {confirm: "一度削除した投稿は復元できません。よろしいですか？"} %></div>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <div class="profile-env">
+        <header class="row">
+            <div class="col-sm-2">
+                <a href="#" class="profile-picture">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="img-responsive img-circle"> </a>
             </div>
-          </div>
-        </div>
-      <% end %>
+            <div class="col-sm-7">
+                <ul class="profile-info-sections">
+                    <li>
+                        <div class="profile-name">
+                            <strong>
+                                <%= link_to @user.name, @user %>
+                            </strong>
+                            <span>
+                                <a href="#">Co-Founder at Google</a>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile-stat">
+                            <h3>643</h3>
+                            <span>
+                                <a href="#">followers</a>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile-stat">
+                            <h3>108</h3>
+                            <span>
+                                <a href="#">following</a>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <div class="profile-buttons">
+                    <a href="#" class="btn btn-default">
+                        Follow
+                    </a>
+                </div>
+            </div>
+        </header>
+        <section class="profile-info-tabs">
+            <div class="row">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <ul class="user-details">
+                        <li>
+                            <a href="#">
+                                <i class="entypo-location"></i>
+                                Prishtina
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="entypo-suitcase"></i>
+                                Works as
+                                <span>Laborator</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="entypo-calendar"></i>
+                                16 October
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- tabs for the profile links -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#profile-info">Profile</a>
+                        </li>
+                        <li>
+                            <a href="#biography">Bio</a>
+                        </li>
+                        <li>
+                            <a href="#profile-edit">Edit Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="profile-feed">
+            <!-- profile post form -->
+            <form class="profile-post-form" method="post">
+                <textarea class="form-control autogrow" placeholder="What's on your mind?" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 80px;"></textarea>
+                <div class="form-options">
+                    <div class="post-type">
+                        <a href="#" class="tooltip-primary" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Upload a Picture">
+                            <i class="entypo-camera"></i>
+                        </a>
+                        <a href="#" class="tooltip-primary" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Attach a file">
+                            <i class="entypo-attach"></i>
+                        </a>
+                        <a href="#" class="tooltip-primary" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Check-in">
+                            <i class="entypo-location"></i>
+                        </a>
+                    </div>
+                    <div class="post-submit">
+                        <button type="button" class="btn btn-primary">POST</button>
+                    </div>
+                </div>
+            </form>
+            <!-- profile stories -->
+            <div class="profile-stories">
+                <article class="story">
+                    <aside class="user-thumb">
+                        <a href="#">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" width="44" alt="" class="img-circle"> </a>
+                    </aside>
+                    <div class="story-content">
+                        <!-- story header -->
+                        <header>
+                            <div class="publisher">
+                                <a href="#">Marting flowtlhrow</a> posted a status update
+                                <em>3 hours ago</em>
+                            </div>
+                            <div class="story-type">
+                                <i class="entypo-feather"></i>
+                            </div>
+                        </header>
+                        <div class="story-main-content">
+                            <p>Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may. </p>
+                        </div>
+                        <!-- story like and comment link -->
+                        <footer>
+                            <a href="#" class="liked">
+                                <i class="entypo-heart"></i>
+                                Liked
+                                <span>(8)</span>
+                            </a>
+                            <a href="#">
+                                <i class="entypo-comment"></i>
+                                Comment
+                                <span>(12)</span>
+                            </a>
+                            <!-- story comments -->
+                            <ul class="comments">
+                                <li>
+                                    <div class="user-comment-thumb">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="img-circle" width="30"> 
+                                    </div>
+                                    <div class="user-comment-content">
+                                        <a href="#" class="user-comment-name">
+                                            John doe
+                                        </a>
+                                        Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Add and offered prepare how cordial two promise.
+                                        <div class="user-comment-meta">
+                                            <a href="#" class="comment-date">January 4 at 1:11am</a>
+                                            -
+                                            <a href="#">
+                                                <i class="entypo-heart"></i>
+                                                Like
+                                                <span>(2)</span>
+                                            </a>
+                                            -
+                                            <a href="#">
+                                                <i class="entypo-comment"></i>
+                                                Reply
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="user-comment-thumb">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-circle" width="30">   
+                                    </div>
+                                    <div class="user-comment-content">
+                                        <a href="#" class="user-comment-name">
+                                            John doe
+                                        </a>
+                                        Extremity direction existence as dashwoods do up. Securing marianne led welcomed offended but offering six raptures. Conveying concluded newspaper rapturous oh at.
+                                        <div class="user-comment-meta">
+                                            <a href="#" class="comment-date">January 3 at 6:42pm</a>
+                                            -
+                                            <a href="#" class="liked">
+                                                <i class="entypo-heart"></i>
+                                                Liked
+                                            </a>
+                                            -
+                                            <a href="#">
+                                                <i class="entypo-comment"></i>
+                                                Reply
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="user-comment-thumb">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="img-circle" width="30">   
+                                    </div>
+                                    <div class="user-comment-content">
+                                        <a href="#" class="user-comment-name">
+                                            John doe
+                                        </a>
+                                        Mean if he they been no hold mr. Is at much do made took held help. Latter person am secure of estate genius at.
+                                        <div class="user-comment-meta">
+                                            <a href="#" class="comment-date">January 2 at 3:25pm</a>
+                                            -
+                                            <a href="#">
+                                                <i class="entypo-heart"></i>
+                                                Like
+                                            </a>
+                                            -
+                                            <a href="#">
+                                                <i class="entypo-comment"></i>
+                                                Reply
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="comment-form">
+                                    <div class="user-comment-thumb">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-circle" width="30">  
+                                    </div>
+                                    <div class="user-comment-content">
+                                        <textarea class="form-control autogrow" placeholder="Write a comment..." style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 46px;"></textarea>
+                                        <button class="btn">
+                                            <i class="entypo-chat"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </footer>
+                        <!-- separator -->
+                        <hr>         
+                    </div>
+                </article>
+                
+                <div class="text-center">
+                    <a href="#" class="btn btn-default btn-icon icon-left">
+                        <i class="entypo-hourglass"></i>
+                        Load More …
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
-  </div>
 </div>

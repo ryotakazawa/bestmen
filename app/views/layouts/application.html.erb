@@ -5,15 +5,16 @@
     <%= render 'layouts/rails_default' %>
     <%= render 'layouts/shim' %>
     <%= render 'layouts/google_map' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
-    <%= render 'layouts/header' %>
+    <%= render 'layouts/header_2' %>
     <%= render 'layouts/flash_message' %>
-    <div class="container">
+    
       <div class="modal fade" id="pic-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
       <%= yield %>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
-    </div>
+      
   </body>
 </html>

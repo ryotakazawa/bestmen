@@ -1,7 +1,6 @@
 class MapsController < ApplicationController
   def index
-    @pics = Pic.all
-    @pic = Pic.first
+    @pics = Pic.all.includes(:taggings)
     
     @array_pics = []
     @pics.each do |pic|
