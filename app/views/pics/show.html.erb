@@ -10,6 +10,9 @@
     <div class="btn btn-info"><%= link_to "編集", edit_pic_path %></div>
     <div class="btn btn-danger"><%= link_to "削除", pic_path, method: :delete, data: {confirm: "一度削除した投稿は復元できません。よろしいですか？"} %></div>
   <% end %>
+  
+  <div id="map" style='height: 300px;'></div>
+  
   <div>
     <h4>コメント</h4>
     <div id="comments_area" class="commentList"><!-- #① -->
@@ -22,3 +25,25 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  var map;
+  var myLatLng;
+  var marker;
+  function initMap() {
+    myLatLng = {lat: <%= @pic.latitude %>, lng: <%= @pic.longitude %>};
+    
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: myLatLng,
+      zoom: 15
+    });
+    
+    marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'Hello World!'
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLE_MAP_API_KEY"]%>&callback=initMap"
+async defer></script>
