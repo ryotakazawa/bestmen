@@ -22,7 +22,6 @@ class PicsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @pic.comments.includes(:user)
-    
   end
   
   def create
@@ -71,7 +70,7 @@ class PicsController < ApplicationController
   
   private
     def pic_params
-      params.require(:pic).permit(:title, :description, :image, :tag_list)
+      params.require(:pic).permit(:title, :description, :image, :tag_list, :address, :latitude, :longitude)
     end
     
     def find_pic
