@@ -1,5 +1,3 @@
-<% provide(:title, "マップから探す") %>
-
 <input id="pac-input" class="controls" type="text" placeholder="地名や店名で検索">
 <div id="map" style='height: 600px;'></div>
 
@@ -12,8 +10,9 @@
   // This example requires the Places library. Include the libraries=places
   // parameter when you first load the API. For example:
   // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-  window.onload = function initAutocomplete() {
+  
+  
+    function initAutocomplete() {
      var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 35.681236, lng: 139.767125},
           zoom: 13,
@@ -32,19 +31,19 @@
     
 
      // データを読み込み
-  	var markerData = <%=  raw @array_pics.to_json %>;
-  	
-  	for (i = 0;i < markerData.length;i++) {
-  	  // ここでaddressをlatitudeとlongitude変数に変換して格納する
-  		// マーカーを生成
-  		var marker = new google.maps.Marker({
-  		    position: new google.maps.LatLng(markerData[i].latitude, markerData[i].longitude),
-  		    title: markerData[i].title
-  		});
-  		// マーカーを地図に表示
-  		marker.setMap(map);
-  	}
-  	
+      var markerData = <%=  raw @array_pics.to_json %>;
+      
+      for (i = 0;i < markerData.length;i++) {
+        // ここでaddressをlatitudeとlongitude変数に変換して格納する
+          // マーカーを生成
+          var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(markerData[i].latitude, markerData[i].longitude),
+              title: markerData[i].title
+          });
+          // マーカーを地図に表示
+          marker.setMap(map);
+      }
+      
 
     
     // Listen for the event fired when the user selects a prediction and retrieve
@@ -84,5 +83,5 @@
       map.fitBounds(bounds);
     });
   }
-
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLE_MAP_API_KEY"]%>&libraries=places&callback=initAutocomplete" async defer></script>

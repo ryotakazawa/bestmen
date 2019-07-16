@@ -5,6 +5,9 @@ class Pic < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   
+  geocoded_by :address
+  after_validation :geocode
+  
   validates :title, presence: true
   validates :tag_list, presence: true
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: '/system/pics/images/no_image.png'
