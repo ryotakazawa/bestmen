@@ -7,11 +7,92 @@
       <% end %>
     </ul>
   <% end %>
-  <%= f.file_field :image, label: '画像1', as: :file , input_html: { class: 'form-controll'} %>
+  
   <%= f.input :title, label: '店名', input_html: { class: 'form-controll'} %>
+  <p>写真</p>
+  <%= f.file_field :image, label: '画像', as: :file , input_html: { class: 'form-controll'} %>
+  <p>住所</p>
+  <input id= "pac-input", class= "controls", type= "text", placeholder= "店名を入力し、合致する予想変換をセレクトして下さい">
+  
+  <div id="map" style='height: 300px;'></div>
+  
   <p>ジャンル</p>
   <%= f.select :tag_list,  [["醤油", "醤油"],["塩", "塩"],["味噌", "味噌"],["豚骨", "豚骨"],["担々麺", "担々麺"],["家系", "家系"],["魚介系", "魚介系"],["激辛系", "激辛系"],["その他", "その他"]], :include_blank => true, label: '店名', input_html: { class: 'form-controll'} %>
   <%= f.input :description, label: '認定理由', input_html: { class: 'form-controll'} %>
   
-  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= f.button :submit, type: 'button', onclick: 'submit();', class: "btn btn-primary" %>
 <% end %>
+
+<script>
+  window.onload = function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 35.681236, lng: 139.767125},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        // サーチボックスのサイズを"地図の"ビューポートの境目によって規定。現在ボックスがマップ外に配置されているので無効
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+        
+        
+      }
+      
+      
+</script>
