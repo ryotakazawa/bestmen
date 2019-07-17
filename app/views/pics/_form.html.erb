@@ -15,6 +15,7 @@
   <%= f.input :address, label: '場所', input_html: { class: 'form-controll'} %>
   
   <input id= "pac-input", class= "controls", type= "text", placeholder= "店名を入力し、合致する予想変換をセレクトして下さい">
+  <button onclick="copyToClipboard()", type= "button">コピー</button>
   <div id="map" style='height: 300px;'></div>
   
   <p>ジャンル</p>
@@ -24,6 +25,7 @@
   <%= f.button :submit, type: 'button', onclick: 'submit();', class: "btn btn-primary" %>
 <% end %>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLE_MAP_API_KEY"]%>&libraries=places&callback=initAutocomplete" async defer></script>
 <script>
    function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -92,5 +94,12 @@
           map.fitBounds(bounds);
         });
       }
+    function copyToClipboard() {
+          // コピー対象をJavaScript上で変数として定義する
+          var copyTarget = document.getElementById("pac-input");
+          // コピー対象のテキストを選択する
+          copyTarget.select();
+          // 選択しているテキストをクリップボードにコピーする
+          document.execCommand("Copy");
+      }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLE_MAP_API_KEY"]%>&libraries=places&callback=initAutocomplete" async defer></script>
