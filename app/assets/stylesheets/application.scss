@@ -37,7 +37,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 150px;
+  padding-top: 40px;
 }
 
 section {
@@ -83,6 +83,9 @@ p {
 }
 
 /* container */
+.container{
+  padding-top: 50px;
+}
 .container-small, .container-large {
     max-width: 100%;
 }
