@@ -1,33 +1,47 @@
-<h2>ログイン</h2>
+<% provide(:title, "ログイン") %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="container">
+  <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <div class="form-signin">
+              <h5 class="card-title text-center">ログイン</h5>
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <%= render "devise/shared/error_messages", resource: resource %>
+                    <div class="form-label-group">
+                      <%= f.label :email %><br />
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+                    </div>
+                  
+                    <div class="form-label-group">
+                      <%= f.label :password %><br />
+                      <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+                    </div>
+                    
+                    <% if devise_mapping.rememberable? %>
+                      <div class="custom-control custom-checkbox mb-3">
+                        <%= f.check_box :remember_me, class: "custom-control-input", id: "customCheck1" %>
+                        <%= f.label :remember_me,  class: "custom-control-label", for: "customCheck1" %>
+                      </div>
+                    <% end %>
+                  
+                    <div class="actions">
+                      <%= f.submit "ログイン", class: "btn btn-primary jelly" %>
+                    </div>
+                <% end %>
+                
+                <%= form_for(resource, as: resource_name, url: user_session_path) do |f| %>
+                  <%= f.hidden_field :email, {value: 'test@bestmen.com'} %>
+                  <%= f.hidden_field :password, {value: 'password'} %>
+                  <%= f.submit "簡単ログイン", class: "submit-btn actions btn btn-primary jelly" %>
+                  <p>↑ポートフォリオ観覧用のログインです。</br>テストユーザーでログインします</p>
+                <% end %>
+                <hr class="my-4">
+                <%= render "users/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "ログイン" %>
-  </div>
-<% end %>
-
-<%= form_for(resource, as: resource_name, url: user_session_path) do |f| %>
-  <%= f.hidden_field :email, {value: 'test@bestmen.com'} %>
-  <%= f.hidden_field :password, {value: 'password'} %>
-  <%= f.submit "簡単ログイン", class: "submit-btn" %>
-  <p>※ポートフォリオ観覧用のログインです。テストユーザーでログインします</p>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

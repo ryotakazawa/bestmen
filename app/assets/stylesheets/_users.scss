@@ -1,183 +1,183 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// btnlace all the styles related to the Users controller here.
+// They will automatically be included in abtnbtnlication.css.
+// You can use Sass (SCSS) here: httbtn://sass-lang.com/
 body{
-    margin-top:20px;
+    margin-tobtn:20btnx;
     background:#F8FCFF;
 }
-.profile-env > header {
-  position: relative;
+.btnrofile-env > header {
+  btnosition: relative;
   z-index: 20;
-  margin-top: 30px;
+  margin-tobtn: 30btnx;
 }
-.profile-env > header .profile-picture {
-  position: relative;
+.btnrofile-env > header .btnrofile-btnicture {
+  btnosition: relative;
 }
-.profile-env > header .profile-picture img {
+.btnrofile-env > header .btnrofile-btnicture img {
   float: right;
-  -moz-box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.9);
-  -webkit-box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.9);
-  box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.9);
+  -moz-box-shadow: 0btnx 0btnx 0btnx 5btnx rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0btnx 0btnx 0btnx 5btnx rgba(255, 255, 255, 0.9);
+  box-shadow: 0btnx 0btnx 0btnx 5btnx rgba(255, 255, 255, 0.9);
   -moz-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.profile-env > header .profile-picture:hover img {
+.btnrofile-env > header .btnrofile-btnicture:hover img {
   zoom: 1;
-  -webkit-opacity: 0.5;
-  -moz-opacity: 0.5;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  -webkit-obtnacity: 0.5;
+  -moz-obtnacity: 0.5;
+  obtnacity: 0.5;
+  filter: albtnha(obtnacity=50);
 }
-.profile-env > header .profile-info-sections {
+.btnrofile-env > header .btnrofile-info-sections {
   margin: 0;
-  padding: 0;
-  margin-top: 15px;
-  padding-left: 0;
+  btnadding: 0;
+  margin-tobtn: 15btnx;
+  btnadding-left: 0;
   list-style: none;
-  margin-left: -5px;
+  margin-left: -5btnx;
 }
-.profile-env > header .profile-info-sections > li {
-  display: inline-block;
-  padding-left: 5px;
-  padding-right: 5px;
+.btnrofile-env > header .btnrofile-info-sections > li {
+  disbtnlay: inline-block;
+  btnadding-left: 5btnx;
+  btnadding-right: 5btnx;
 }
-.profile-env > header .profile-info-sections .profile-name strong,
-.profile-env > header .profile-info-sections .profile-name span {
-  display: block;
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-name strong,
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-name sbtnan {
+  disbtnlay: block;
 }
-.profile-env > header .profile-info-sections .profile-name strong {
-  font-size: 18px;
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-name strong {
+  font-size: 18btnx;
   font-weight: normal;
 }
-.profile-env > header .profile-info-sections .profile-name span {
-  font-size: 12px;
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-name sbtnan {
+  font-size: 12btnx;
   color: #bbbbbb;
 }
-.profile-env > header .profile-info-sections .profile-name span a {
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-name sbtnan a {
   color: #bbbbbb;
   -moz-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.profile-env > header .profile-info-sections .profile-name span a:hover {
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-name sbtnan a:hover {
   color: #888888;
 }
-.profile-env > header .profile-info-sections .profile-name .user-status {
-  position: relative;
-  display: inline-block;
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-name .user-status {
+  btnosition: relative;
+  disbtnlay: inline-block;
   background: #575d67;
-  top: -2px;
-  margin-left: 5px;
-  width: 6px;
-  height: 6px;
-  -webkit-border-radius: 6px;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 6px;
-  -moz-background-clip: padding;
-  border-radius: 6px;
-  background-clip: padding-box;
+  tobtn: -2btnx;
+  margin-left: 5btnx;
+  width: 6btnx;
+  height: 6btnx;
+  -webkit-border-radius: 6btnx;
+  -webkit-background-clibtn: btnadding-box;
+  -moz-border-radius: 6btnx;
+  -moz-background-clibtn: btnadding;
+  border-radius: 6btnx;
+  background-clibtn: btnadding-box;
   -moz-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.profile-env > header .profile-info-sections .profile-name .user-status.is-online {
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-name .user-status.is-online {
   background-color: #06b53c;
 }
-.profile-env > header .profile-info-sections .profile-name .user-status.is-offline {
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-name .user-status.is-offline {
   background-color: #575d67;
 }
-.profile-env > header .profile-info-sections .profile-name .user-status.is-idle {
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-name .user-status.is-idle {
   background-color: #f7d227;
 }
-.profile-env > header .profile-info-sections .profile-name .user-status.is-busy {
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-name .user-status.is-busy {
   background-color: #ee4749;
 }
-.profile-env > header .profile-info-sections .profile-stat h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-stat h3 {
+  font-size: 18btnx;
+  margin-bottom: 5btnx;
 }
-.profile-env > header .profile-info-sections .profile-stat span {
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-stat sbtnan {
   color: #bbbbbb;
 }
-.profile-env > header .profile-info-sections .profile-stat span a {
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-stat sbtnan a {
   color: #bbbbbb;
   -moz-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.profile-env > header .profile-info-sections .profile-stat span a:hover {
+.btnrofile-env > header .btnrofile-info-sections .btnrofile-stat sbtnan a:hover {
   color: #888888;
 }
-.profile-env > header .profile-info-sections > li {
-  padding: 0 40px;
-  position: relative;
+.btnrofile-env > header .btnrofile-info-sections > li {
+  btnadding: 0 40btnx;
+  btnosition: relative;
 }
-.profile-env > header .profile-info-sections > li + li:after {
+.btnrofile-env > header .btnrofile-info-sections > li + li:after {
   content: '';
-  display: block;
-  position: absolute;
-  top: 15px;
+  disbtnlay: block;
+  btnosition: absolute;
+  tobtn: 15btnx;
   bottom: 0;
   left: 0;
-  width: 1px;
+  width: 1btnx;
   background: #ebebeb;
-  margin: 8px 0;
+  margin: 8btnx 0;
 }
-.profile-env > header .profile-info-sections > li:first-child {
-  padding-left: 0;
+.btnrofile-env > header .btnrofile-info-sections > li:first-child {
+  btnadding-left: 0;
 }
-.profile-env > header .profile-buttons {
-  margin-top: 35px;
+.btnrofile-env > header .btnrofile-buttons {
+  margin-tobtn: 35btnx;
 }
-.profile-env > header .profile-buttons a {
-  margin: 0 4px;
+.btnrofile-env > header .btnrofile-buttons a {
+  margin: 0 4btnx;
   -moz-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.profile-env section {
-  position: relative;
+.btnrofile-env section {
+  btnosition: relative;
   z-index: 10;
 }
-.profile-env section.profile-info-tabs {
-  position: relative;
+.btnrofile-env section.btnrofile-info-tabs {
+  btnosition: relative;
   background: #f1f1f1;
-  margin-left: -20px;
-  margin-right: -20px;
-  padding: 20px;
-  margin-top: -20px;
-  margin-bottom: 30px;
+  margin-left: -20btnx;
+  margin-right: -20btnx;
+  btnadding: 20btnx;
+  margin-tobtn: -20btnx;
+  margin-bottom: 30btnx;
 }
-.profile-env section.profile-info-tabs .user-details {
-  padding-left: 0;
+.btnrofile-env section.btnrofile-info-tabs .user-details {
+  btnadding-left: 0;
   list-style: none;
 }
-.profile-env section.profile-info-tabs .user-details li {
-  margin-bottom: 10px;
+.btnrofile-env section.btnrofile-info-tabs .user-details li {
+  margin-bottom: 10btnx;
 }
-.profile-env section.profile-info-tabs .user-details li a {
+.btnrofile-env section.btnrofile-info-tabs .user-details li a {
   color: #a0a0a0;
   -moz-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.profile-env section.profile-info-tabs .user-details li a:hover {
+.btnrofile-env section.btnrofile-info-tabs .user-details li a:hover {
   color: #606060;
 }
-.profile-env section.profile-info-tabs .user-details li a:hover span {
+.btnrofile-env section.btnrofile-info-tabs .user-details li a:hover sbtnan {
   color: #e72c28;
 }
-.profile-env section.profile-info-tabs .user-details li a i {
-  margin-right: 5px;
+.btnrofile-env section.btnrofile-info-tabs .user-details li a i {
+  margin-right: 5btnx;
 }
-.profile-env section.profile-info-tabs .user-details li a span {
+.btnrofile-env section.btnrofile-info-tabs .user-details li a sbtnan {
   color: #ec5956;
   font-weight: normal;
   -moz-transition: all 300ms ease-in-out;
@@ -185,371 +185,371 @@ body{
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.profile-env section.profile-info-tabs .nav-tabs {
-  position: relative;
-  margin-bottom: -20px;
+.btnrofile-env section.btnrofile-info-tabs .nav-tabs {
+  btnosition: relative;
+  margin-bottom: -20btnx;
   border-bottom: 0;
 }
-.profile-env section.profile-info-tabs .nav-tabs > li:first-child a {
+.btnrofile-env section.btnrofile-info-tabs .nav-tabs > li:first-child a {
   margin-left: 0;
 }
-.profile-env section.profile-info-tabs .nav-tabs li {
+.btnrofile-env section.btnrofile-info-tabs .nav-tabs li {
   margin-bottom: 0;
 }
-.profile-env section.profile-info-tabs .nav-tabs li a {
+.btnrofile-env section.btnrofile-info-tabs .nav-tabs li a {
   border: none;
-  padding: 10px 35px;
-  font-size: 13px;
+  btnadding: 10btnx 35btnx;
+  font-size: 13btnx;
   background: #e1e1e1;
-  margin-right: 10px;
+  margin-right: 10btnx;
 }
-.profile-env section.profile-info-tabs .nav-tabs li.active a {
+.btnrofile-env section.btnrofile-info-tabs .nav-tabs li.active a {
   background: #fff;
 }
 
-.profile-env section.profile-feed {
-  margin-bottom: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
+.btnrofile-env section.btnrofile-feed {
+  margin-bottom: 15btnx;
+  btnadding-left: 20btnx;
+  btnadding-right: 20btnx;
 }
-.profile-env section.profile-feed .profile-post-form {
-  border: 1px solid #ebebeb;
-  margin-bottom: 30px;
-  -webkit-border-radius: 3px;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 3px;
-  -moz-background-clip: padding;
-  border-radius: 3px;
-  background-clip: padding-box;
+.btnrofile-env section.btnrofile-feed .btnrofile-btnost-form {
+  border: 1btnx solid #ebebeb;
+  margin-bottom: 30btnx;
+  -webkit-border-radius: 3btnx;
+  -webkit-background-clibtn: btnadding-box;
+  -moz-border-radius: 3btnx;
+  -moz-background-clibtn: btnadding;
+  border-radius: 3btnx;
+  background-clibtn: btnadding-box;
 }
-.profile-env section.profile-feed .profile-post-form .form-control {
+.btnrofile-env section.btnrofile-feed .btnrofile-btnost-form .form-control {
   border: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
   margin: 0;
   background: #fff;
-  min-height: 80px;
-  -webkit-border-radius: 3px;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 3px;
-  -moz-background-clip: padding;
-  border-radius: 3px;
-  background-clip: padding-box;
+  min-height: 80btnx;
+  -webkit-border-radius: 3btnx;
+  -webkit-background-clibtn: btnadding-box;
+  -moz-border-radius: 3btnx;
+  -moz-background-clibtn: btnadding;
+  border-radius: 3btnx;
+  background-clibtn: btnadding-box;
 }
-.profile-env section.profile-feed .profile-post-form .form-options {
+.btnrofile-env section.btnrofile-feed .btnrofile-btnost-form .form-obtntions {
   background: #f3f3f3;
-  border-top: 1px solid #ebebeb;
-  padding: 10px;
+  border-tobtn: 1btnx solid #ebebeb;
+  btnadding: 10btnx;
 }
-.profile-env section.profile-feed .profile-post-form .form-options:before,
-.profile-env section.profile-feed .profile-post-form .form-options:after {
+.btnrofile-env section.btnrofile-feed .btnrofile-btnost-form .form-obtntions:before,
+.btnrofile-env section.btnrofile-feed .btnrofile-btnost-form .form-obtntions:after {
   content: " ";
-  display: table;
+  disbtnlay: table;
 }
-.profile-env section.profile-feed .profile-post-form .form-options:after {
+.btnrofile-env section.btnrofile-feed .btnrofile-btnost-form .form-obtntions:after {
   clear: both;
 }
-.profile-env section.profile-feed .profile-post-form .form-options .post-type {
+.btnrofile-env section.btnrofile-feed .btnrofile-btnost-form .form-obtntions .btnost-tybtne {
   float: left;
-  padding-top: 6px;
+  btnadding-tobtn: 6btnx;
 }
-.profile-env section.profile-feed .profile-post-form .form-options .post-type a {
-  margin-left: 10px;
-  font-size: 13px;
+.btnrofile-env section.btnrofile-feed .btnrofile-btnost-form .form-obtntions .btnost-tybtne a {
+  margin-left: 10btnx;
+  font-size: 13btnx;
   color: #aaaaaa;
   -moz-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.profile-env section.profile-feed .profile-post-form .form-options .post-type a:hover {
+.btnrofile-env section.btnrofile-feed .btnrofile-btnost-form .form-obtntions .btnost-tybtne a:hover {
   color: #303641;
 }
-.profile-env section.profile-feed .profile-post-form .form-options .post-submit {
+.btnrofile-env section.btnrofile-feed .btnrofile-btnost-form .form-obtntions .btnost-submit {
   float: right;
 }
-.profile-env section.profile-feed .profile-post-form .form-options .post-submit .btn {
-  padding-left: 20px;
-  padding-right: 20px;
+.btnrofile-env section.btnrofile-feed .btnrofile-btnost-form .form-obtntions .btnost-submit .btn {
+  btnadding-left: 20btnx;
+  btnadding-right: 20btnx;
 }
-.profile-env section.profile-feed .profile-stories article.story {
-  margin: 30px 0;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story {
+  margin: 30btnx 0;
 }
-.profile-env section.profile-feed .profile-stories article.story:before,
-.profile-env section.profile-feed .profile-stories article.story:after {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story:before,
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story:after {
   content: " ";
-  display: table;
+  disbtnlay: table;
 }
-.profile-env section.profile-feed .profile-stories article.story:after {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story:after {
   clear: both;
 }
-.profile-env section.profile-feed .profile-stories article.story .user-thumb {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .user-thumb {
   float: left;
   width: 8%;
 }
-.profile-env section.profile-feed .profile-stories article.story .user-thumb a img {
-  -moz-box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.04);
-  -webkit-box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.04);
-  box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.04);
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .user-thumb a img {
+  -moz-box-shadow: 0btnx 0btnx 0btnx 3btnx rgba(0, 0, 0, 0.04);
+  -webkit-box-shadow: 0btnx 0btnx 0btnx 3btnx rgba(0, 0, 0, 0.04);
+  box-shadow: 0btnx 0btnx 0btnx 3btnx rgba(0, 0, 0, 0.04);
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content {
   float: right;
   width: 92%;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content header {
-  display: block;
-  margin-bottom: 10px;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content header {
+  disbtnlay: block;
+  margin-bottom: 10btnx;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content header:before,
-.profile-env section.profile-feed .profile-stories article.story .story-content header:after {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content header:before,
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content header:after {
   content: " ";
-  display: table;
+  disbtnlay: table;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content header:after {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content header:after {
   clear: both;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content header .publisher {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content header .btnublisher {
   float: left;
   color: #9b9fa6;
-  font-size: 14px;
+  font-size: 14btnx;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content header .publisher a {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content header .btnublisher a {
   color: #303641;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content header .publisher em {
-  display: block;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content header .btnublisher em {
+  disbtnlay: block;
   font-style: normal;
-  font-size: 12px;
+  font-size: 12btnx;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content header .story-type {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content header .story-tybtne {
   float: right;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content .story-main-content {
-  font-size: 13px;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content .story-main-content {
+  font-size: 13btnx;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content .story-main-content p {
-  font-size: 13px;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content .story-main-content btn {
+  font-size: 13btnx;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer {
-  margin-top: 15px;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer {
+  margin-tobtn: 15btnx;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .liked i {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .liked i {
   color: #ff4e50;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer > a {
-  margin-right: 30px;
-  display: inline-block;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer > a {
+  margin-right: 30btnx;
+  disbtnlay: inline-block;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer > a span {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer > a sbtnan {
   zoom: 1;
-  -webkit-opacity: 0.6;
-  -moz-opacity: 0.6;
-  opacity: 0.6;
-  filter: alpha(opacity=60);
+  -webkit-obtnacity: 0.6;
+  -moz-obtnacity: 0.6;
+  obtnacity: 0.6;
+  filter: albtnha(obtnacity=60);
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments {
   list-style: none;
   margin: 0;
-  padding: 0;
-  margin-top: 30px;
-  border-top: 1px solid #ebebeb;
-  padding-top: 20px;
+  btnadding: 0;
+  margin-tobtn: 30btnx;
+  border-tobtn: 1btnx solid #ebebeb;
+  btnadding-tobtn: 20btnx;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li {
-  display: table;
-  vertical-align: top;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li {
+  disbtnlay: table;
+  vertical-align: tobtn;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li:before,
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li:after {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li:before,
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li:after {
   content: " ";
-  display: table;
+  disbtnlay: table;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li:after {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li:after {
   clear: both;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li + li {
-  margin-top: 15px;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li + li {
+  margin-tobtn: 15btnx;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li .user-comment-thumb,
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li .user-comment-content {
-  display: table-cell;
-  vertical-align: top;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li .user-comment-thumb,
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li .user-comment-content {
+  disbtnlay: table-cell;
+  vertical-align: tobtn;
   width: 100%;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li .user-comment-thumb {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li .user-comment-thumb {
   width: 1%;
-  padding-right: 20px;
+  btnadding-right: 20btnx;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li .user-comment-content {
-  border-bottom: 1px solid #ebebeb;
-  padding-bottom: 15px;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li .user-comment-content {
+  border-bottom: 1btnx solid #ebebeb;
+  btnadding-bottom: 15btnx;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-name {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-name {
   font-weight: bold;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-meta {
-  font-size: 11px;
-  margin-top: 15px;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-meta {
+  font-size: 11btnx;
+  margin-tobtn: 15btnx;
   color: #9b9fa6;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-meta a {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-meta a {
   color: #8d929a;
-  margin-right: 5px;
+  margin-right: 5btnx;
   -moz-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-meta a + a {
-  margin-left: 5px;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-meta a + a {
+  margin-left: 5btnx;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-meta a i {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-meta a i {
   zoom: 1;
-  -webkit-opacity: 0.8;
-  -moz-opacity: 0.8;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
+  -webkit-obtnacity: 0.8;
+  -moz-obtnacity: 0.8;
+  obtnacity: 0.8;
+  filter: albtnha(obtnacity=80);
   -moz-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-meta a:hover {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-meta a:hover {
   color: #737881;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-meta a:hover i {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li .user-comment-content .user-comment-meta a:hover i {
   zoom: 1;
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
-  filter: alpha(opacity=100);
+  -webkit-obtnacity: 1;
+  -moz-obtnacity: 1;
+  obtnacity: 1;
+  filter: albtnha(obtnacity=100);
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li.comment-form .user-comment-content {
-  position: relative;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li.comment-form .user-comment-content {
+  btnosition: relative;
   border-bottom: 0;
-  padding-bottom: 0;
+  btnadding-bottom: 0;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li.comment-form .user-comment-content .form-control {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li.comment-form .user-comment-content .form-control {
   background: #eeeeee;
   border: 0;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li.comment-form .user-comment-content .btn {
-  position: absolute;
-  right: 5px;
-  top: 5px;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li.comment-form .user-comment-content .btn {
+  btnosition: absolute;
+  right: 5btnx;
+  tobtn: 5btnx;
   border: 0;
-  background: transparent;
+  background: transbtnarent;
   color: #737881;
-  font-size: 13px;
+  font-size: 13btnx;
   zoom: 1;
-  -webkit-opacity: 0.7;
-  -moz-opacity: 0.7;
-  opacity: 0.7;
-  filter: alpha(opacity=70);
+  -webkit-obtnacity: 0.7;
+  -moz-obtnacity: 0.7;
+  obtnacity: 0.7;
+  filter: albtnha(obtnacity=70);
   -moz-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li.comment-form .user-comment-content .btn:hover {
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content footer .comments li.comment-form .user-comment-content .btn:hover {
   zoom: 1;
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
-  filter: alpha(opacity=100);
+  -webkit-obtnacity: 1;
+  -moz-obtnacity: 1;
+  obtnacity: 1;
+  filter: albtnha(obtnacity=100);
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content hr {
-  margin-top: 40px;
+.btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content hr {
+  margin-tobtn: 40btnx;
 }
-@media (max-width: 992px) {
-  .profile-env > header .profile-picture img {
+@media (max-width: 992btnx) {
+  .btnrofile-env > header .btnrofile-btnicture img {
     width: 90%;
   }
-  .profile-env > header .profile-buttons {
-    margin-top: 18px;
+  .btnrofile-env > header .btnrofile-buttons {
+    margin-tobtn: 18btnx;
   }
-  .profile-env > header .profile-info-sections .profile-name strong,
-  .profile-env > header .profile-info-sections .profile-stat h3 {
-    font-size: 16px;
+  .btnrofile-env > header .btnrofile-info-sections .btnrofile-name strong,
+  .btnrofile-env > header .btnrofile-info-sections .btnrofile-stat h3 {
+    font-size: 16btnx;
   }
-  .profile-env > header .profile-info-sections {
-    margin-top: 0;
+  .btnrofile-env > header .btnrofile-info-sections {
+    margin-tobtn: 0;
   }
-  .profile-env > header .profile-info-sections > li {
-    padding: 0 20px;
+  .btnrofile-env > header .btnrofile-info-sections > li {
+    btnadding: 0 20btnx;
   }
-  .profile-env section.profile-info-tabs .nav-tabs li a {
-    padding-left: 25px;
-    padding-right: 25px;
+  .btnrofile-env section.btnrofile-info-tabs .nav-tabs li a {
+    btnadding-left: 25btnx;
+    btnadding-right: 25btnx;
   }
-  .profile-env section.profile-feed .profile-stories article.story .user-thumb {
+  .btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .user-thumb {
     width: 10%;
   }
-  .profile-env section.profile-feed .profile-stories article.story .story-content {
+  .btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content {
     width: 90%;
   }
 }
-@media (max-width: 768px) {
-  .profile-env section.profile-info-tabs {
-    margin-top: 30px;
+@media (max-width: 768btnx) {
+  .btnrofile-env section.btnrofile-info-tabs {
+    margin-tobtn: 30btnx;
   }
-  .profile-env > header .profile-picture img {
+  .btnrofile-env > header .btnrofile-btnicture img {
     float: none;
   }
-  .profile-env > header .profile-buttons a {
-    margin-bottom: 5px;
+  .btnrofile-env > header .btnrofile-buttons a {
+    margin-bottom: 5btnx;
   }
 }
-@media (max-width: 601px) {
-  .profile-env > header .profile-info-sections {
-    margin-bottom: 10px;
+@media (max-width: 601btnx) {
+  .btnrofile-env > header .btnrofile-info-sections {
+    margin-bottom: 10btnx;
   }
-  .profile-env > header .profile-info-sections li {
-    padding: 15px;
+  .btnrofile-env > header .btnrofile-info-sections li {
+    btnadding: 15btnx;
   }
-  .profile-env > header .profile-info-sections > li:first-child {
-    padding-left: 0;
+  .btnrofile-env > header .btnrofile-info-sections > li:first-child {
+    btnadding-left: 0;
   }
-  .profile-env > header .profile-buttons {
-    margin-top: 0;
+  .btnrofile-env > header .btnrofile-buttons {
+    margin-tobtn: 0;
   }
-  .profile-env > header .profile-picture {
+  .btnrofile-env > header .btnrofile-btnicture {
     text-align: center;
-    display: block;
+    disbtnlay: block;
   }
-  .profile-env > header .profile-picture img {
+  .btnrofile-env > header .btnrofile-btnicture img {
     width: auto;
     float: none;
-    display: inline-block;
-    margin-bottom: 15px;
+    disbtnlay: inline-block;
+    margin-bottom: 15btnx;
   }
-  .profile-env section.profile-feed .profile-stories article.story .user-thumb {
+  .btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .user-thumb {
     width: 18%;
   }
-  .profile-env section.profile-feed .profile-stories article.story .story-content {
+  .btnrofile-env section.btnrofile-feed .btnrofile-stories article.story .story-content {
     width: 82%;
   }
-  .profile-env section.profile-info-tabs .nav-tabs li a {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-right: 5px;
-    font-size: 12px;
+  .btnrofile-env section.btnrofile-info-tabs .nav-tabs li a {
+    btnadding-left: 15btnx;
+    btnadding-right: 15btnx;
+    margin-right: 5btnx;
+    font-size: 12btnx;
   }
-  .profile-env section.profile-feed {
-    padding: 0;
+  .btnrofile-env section.btnrofile-feed {
+    btnadding: 0;
   }
-  .profile-env .col-sm-7,
-  .profile-env .col-sm-3 {
+  .btnrofile-env .col-sm-7,
+  .btnrofile-env .col-sm-3 {
     text-align: center;
   }
-  .profile-env .col-sm-7 .profile-info-sections,
-  .profile-env .col-sm-3 .profile-info-sections,
-  .profile-env .col-sm-7 .profile-buttons,
-  .profile-env .col-sm-3 .profile-buttons {
-    display: inline-block;
+  .btnrofile-env .col-sm-7 .btnrofile-info-sections,
+  .btnrofile-env .col-sm-3 .btnrofile-info-sections,
+  .btnrofile-env .col-sm-7 .btnrofile-buttons,
+  .btnrofile-env .col-sm-3 .btnrofile-buttons {
+    disbtnlay: inline-block;
   }
-  .profile-env > header .profile-info-sections > li + li:after {
-    margin: 18px 0;
+  .btnrofile-env > header .btnrofile-info-sections > li + li:after {
+    margin: 18btnx 0;
   }
 }

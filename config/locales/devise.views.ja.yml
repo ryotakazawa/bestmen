@@ -6,7 +6,7 @@ ja:
         current_password: "現在のパスワード"
         email: "メールアドレス"
         password: "パスワード"
-        password_confirmation: "パスワード確認(もう一度同じパスワードを入力してください)"
+        password_confirmation: "パスワード確認(再度パスワードを入力してください)"
         remember_me: "ログインを記憶"
       pic:
         image: "画像"

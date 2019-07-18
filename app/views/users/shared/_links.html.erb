@@ -1,13 +1,38 @@
+
+<% if false %>
 <%- if controller_name != 'sessions' %>
-  <%= link_to "ログイン", new_session_path(resource_name) %><br />
+  <%= link_to "既にアカウントをお持ちの方はこちらからログイン", new_session_path(resource_name) %><br />
+<% end %>
+<% end %>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= link_to omniauth_authorize_path(resource_name, provider), method: :post, class: "btn btn-lg btn-block text-uppercase btn-#{OmniAuth::Utils.camelize(provider).underscore}" do %>
+          <% if OmniAuth::Utils.camelize(provider).underscore == "google_oauth2" && controller_name != 'sessions' %>
+            <i class="fab fa-google"></i>
+            <%= "GOOGLEアカウントで登録" %>
+          <% elsif OmniAuth::Utils.camelize(provider).underscore == "google_oauth2" && controller_name = 'sessions'  %>
+            <i class="fab fa-google"></i>
+            <%= "GOOGLEアカウントでログイン" %>
+          <% elsif controller_name != 'sessions' %>
+            <i class="fab fa-<%= OmniAuth::Utils.camelize(provider).underscore %>"></i>
+            <%= "#{OmniAuth::Utils.camelize(provider)}アカウントで登録" %>
+          <% elsif controller_name = 'sessions'  %>
+            <i class="fab fa-<%= OmniAuth::Utils.camelize(provider).underscore %>"></i>
+            <%= "#{OmniAuth::Utils.camelize(provider)}アカウントでログイン" %>
+          <% else %>
+          <% end %>
+      <% end %>
+      <br />
+  <% end %>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "新規登録", new_registration_path(resource_name) %><br />
+  <%= link_to "アカウントをお持ちでない方はこちら", new_registration_path(resource_name) %><br />
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "パスワードが分からない", new_password_path(resource_name) %><br />
+  <%= link_to "パスワードが分からなくなった場合はこちら", new_password_path(resource_name) %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
@@ -15,11 +40,5 @@
 <% end %>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
-<% end %>
-
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
-  <% end %>
+  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br /><
 <% end %>
