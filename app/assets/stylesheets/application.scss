@@ -9,19 +9,20 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
  */
 
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import "bootstrap-social";
 @import "comments";
 @import "home";
 @import "maps";
 @import "pics";
 @import "static_pages";
 @import "users";
+@import "users_signin_and_login";
 
 
 /* mixins, variables, etc. */
@@ -37,7 +38,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 40px;
+  
 }
 
 section {
@@ -294,5 +295,4 @@ input {
 .hover-parent:hover .mask {
 	opacity:		1;	/* マスクを表示する */
 }
-
 

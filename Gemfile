@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gem 'bcrypt'
 gem 'bootstrap'
+gem 'bootstrap-social-rails'
 gem 'coffee-rails', '4.2.2'
 gem 'devise'
 gem 'devise-i18n' # devise日本語化

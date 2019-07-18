@@ -1,16 +1,12 @@
- <!-- .grid-indexでCards全体をネストする -->
+<div class="container", style='margin-top: 60px;'>
+  <div class="sort">
+    <%= render partial: 'pics/sort' %>
+  </div>
+</div>
 
-  
-    <!-- ウインドウサイズごとにグリッドサイズを定義。スマホだと横に1つ、タブレットだと2つ、PCだと3つ並べる -->
-    <div class="container">
-      <div class="sort">
-        <%= render partial: 'pics/sort' %>
-      </div>
-    </div>
-    
-    <% unless @pics.empty? %>
-      <%= render partial: 'pics/index' %> <!-- ここで表示画面変更 -->
-    <% else %>
-      <h3>まだ投稿はありません。</br>最初の登録者になりましょう！</h3>
-    <% end %>
+<% unless @pics.empty? %>
+  <%= render partial: 'pics/index' %> <!-- ここで表示画面変更 -->
+<% else %>
+  <h3>まだ投稿はありません。</br>最初の登録者になりましょう！</h3>
+<% end %>
 
