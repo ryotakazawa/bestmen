@@ -35,6 +35,11 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
+@font-face {
+  font-family: 'kssweetheavycalligraphy';
+  src: font-url('/assets/fonts/kssweetheavycalligraphy.ttf');
+}
+
 /* universal */
 
 body {

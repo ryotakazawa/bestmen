@@ -26,7 +26,6 @@ class PicsController < ApplicationController
   
   def create
     @pic = current_user.pics.build(pic_params)
-    #ここで別途で住所を受け取ってゲオコーダーに渡して保存すればいいんではないか？
     if @pic.save
       redirect_to @pic, notice: "投稿されました!"
     else
