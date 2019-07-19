@@ -32,11 +32,15 @@
   margin-bottom: 1rem;
 }
 
-.form-label-group input {
+.form-label-group input{
   height: auto;
   border-radius: 2rem;
 }
 
+.form-label-group textarea{
+  height: auto;
+  border-radius: 1rem;
+}
 
 
 .btn-google {
