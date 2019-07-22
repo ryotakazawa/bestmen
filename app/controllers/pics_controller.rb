@@ -66,6 +66,8 @@ class PicsController < ApplicationController
     end
   end
   
+  def insta
+  end
   
   private
     def pic_params

@@ -1,6 +1,21 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.center h1{
-   font-family: 'kssweetheavycalligraphy';
+
+.ramen-background{
+    background-image: image-url("background.jpg");
+    background-size: cover;
+}
+
+.center{
+    h1{
+       font-family: 'kssweetheavycalligraphy';
+       color: $ramen-red;
+       font-size: 80px;
+       line-height: 100px;
+    }
+    h2{
+       font-family: 'rounded-l-mgenplus-2c-bold';
+       color: $ramen-red;
+    }
 }
