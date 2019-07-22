@@ -17,6 +17,7 @@
 
 @import "bootstrap-social";
 @import "comments";
+@import "colors";
 @import "home";
 @import "maps";
 @import "pics";
@@ -27,8 +28,6 @@
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eaeaea;
-
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -36,15 +35,25 @@ $gray-medium-light: #eaeaea;
 }
 
 @font-face {
+  font-family: 'rounded-l-mgenplus-2c-bold';
+  src: font-url('/assets/rounded-l-mgenplus-2c-bold.ttf');
+}
+
+@font-face {
   font-family: 'kssweetheavycalligraphy';
-  src: font-url('/assets/fonts/kssweetheavycalligraphy.ttf');
+  src: font-url('/assets/kssweetheavycalligraphy.ttf');
 }
 
 /* universal */
-
-body {
-  
+.ramen-background{
+    background-image: image-url("background.jpg");
+    background-size: cover;
 }
+.ramen-background2{
+    background-image: image-url("background2.png");
+    background-size: cover;
+}
+
 
 section {
   overflow: auto;
@@ -60,6 +69,9 @@ textarea {
     margin-bottom: 10px;
   }
 }
+
+
+
 
 /* typography */
 
@@ -86,6 +98,10 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+.page-title{
+  font-family: 'rounded-l-mgenplus-2c-bold';
 }
 
 /* container */
@@ -122,6 +138,10 @@ p {
 
 
 /* header */
+.navbar{
+  background-color: $ramen-red;
+}
+
 .navbar-nav{
   padding-right: 50px;
 }
@@ -131,6 +151,7 @@ p {
 }
 .nav-item{
   color: white;
+  font-family: 'rounded-l-mgenplus-2c-bold';
 }
 .navbar-toggler .navbar-toggler-icon {
   outline:none;
@@ -153,27 +174,10 @@ p {
 /* footer */
 
 footer {
-  margin-top: 45px;
+  
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-100;
-  a {
-    color: $gray-100;
-    &:hover {
-      color: $gray-100;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
+  color: $ramen-red;
+  text-align: center;
 }
 
 /* miscellaneous */
