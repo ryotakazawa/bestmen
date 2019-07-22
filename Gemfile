@@ -9,6 +9,8 @@ gem 'coffee-rails', '4.2.2'
 gem 'devise'
 gem 'devise-i18n' # devise日本語化
 gem 'devise-i18n-views' # devise日本語化
+gem 'cancancan'
+gem 'rails_admin'
 gem 'jbuilder',     '2.7.0'
 gem 'jquery-rails', '4.3.1'
 gem 'omniauth'
