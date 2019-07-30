@@ -7,6 +7,8 @@
 <% unless @pics.empty? %>
   <%= render partial: 'pics/index' %> <!-- ここで表示画面変更 -->
 <% else %>
-  <h3>まだ投稿はありません。</br>最初の登録者になりましょう！</h3>
+<div class="no-posts">
+  <h1>まだ投稿はありません。</br></br>最初の登録者になりましょう！</h1>
+</div>
 <% end %>
 

@@ -1,6 +1,27 @@
 // Place all the styles related to the Pics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//index.html.erb
+.sort{
+    padding-bottom: 50px;
+}
+.no-posts{
+  h1{
+    text-align: center;
+    font-family: 'rounded-l-mgenplus-2c-bold';
+    color: black;
+    padding: 100px 0;
+  }
+}
+
+//new.html.erb
+.pic-new{
+ h1{
+    font-family: 'rounded-l-mgenplus-2c-bold';
+ }
+}
+
 .picbox{
   width: 300px;
   margin: 0 auto;
