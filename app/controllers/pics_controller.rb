@@ -7,11 +7,11 @@ class PicsController < ApplicationController
     @search = Pic.ransack(params[:q])
  
     if params[:q]
-      @pics = @search.result.includes(:user, :taggings)
+      @pics = @search.result.includes(:user, :taggings).page(params[:page]).per(3)
     elsif params[:tag_name]
-      @pics = Pic.tagged_with(params[:tag_name]).includes(:user, :taggings)
+      @pics = Pic.tagged_with(params[:tag_name]).includes(:user, :taggings).page(params[:page]).per(3)
     else
-      @pics = Pic.all.order("created_at DESC").includes(:user, :taggings)
+      @pics = Pic.all.order("created_at DESC").includes(:user, :taggings).page(params[:page]).per(3)
     end
   end
   

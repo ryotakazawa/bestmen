@@ -30,6 +30,7 @@ gem 'acts-as-taggable-on'
 gem 'ransack'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', '9.0.6', platform: :mri
