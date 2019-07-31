@@ -10,50 +10,58 @@
   // This example requires the Places library. Include the libraries=places
   // parameter when you first load the API. For example:
   // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-  
-  
+    // データの変数定義
+    var marker = [];
+    var infoWindow = [];
+    var markerData = <%=  raw @array_pics.to_json %>;
+    
     function initAutocomplete() {
-     var map = new google.maps.Map(document.getElementById('map'), {
+      // マップの表示
+      var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 35.681236, lng: 139.767125},
           zoom: 13,
           mapTypeId: 'roadmap'
         });
 
-    // Create the search box and link it to the UI element.
-    var input = document.getElementById('pac-input');
-    var searchBox = new google.maps.places.SearchBox(input);
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-    // Bias the SearchBox results towards current map's viewport.
-    map.addListener('bounds_changed', function() {
-      searchBox.setBounds(map.getBounds());
-    });
-    
-
-     // データを読み込み
-      var markerData = <%=  raw @array_pics.to_json %>;
+      // 検索窓の表示
+      var input = document.getElementById('pac-input');
+      var searchBox = new google.maps.places.SearchBox(input);
+      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  
+      // 検索窓のレスポンシビブ化
+      map.addListener('bounds_changed', function() {
+        searchBox.setBounds(map.getBounds());
+        });
       
       for (i = 0;i < markerData.length;i++) {
-        // ここでaddressをlatitudeとlongitude変数に変換して格納する
           // マーカーを生成
-          var marker = new google.maps.Marker({
+          marker[i] = new google.maps.Marker({
               position: new google.maps.LatLng(markerData[i].latitude, markerData[i].longitude),
               title: markerData[i].title
           });
+          // ウィンドウを生成
+          infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: '<div class="sample">' + markerData[i].title + '</div>' // 吹き出しに表示する内容
+          });
+          
           // マーカーを地図に表示
-          marker.setMap(map);
+          marker[i].setMap(map);
+          
+         // マーカーにクリックイベントを追加
+          markerEvent(i); 
+          
       }
       
 
     
-    // Listen for the event fired when the user selects a prediction and retrieve
-    // more details for that place.
-    searchBox.addListener('places_changed', function() {
-      var places = searchBox.getPlaces();
-
-      if (places.length == 0) {
-        return;
-      }
+      // Listen for the event fired when the user selects a prediction and retrieve
+      // more details for that place.
+      searchBox.addListener('places_changed', function() {
+        var places = searchBox.getPlaces();
+  
+        if (places.length == 0) {
+          return;
+        }
 
       
 
@@ -83,4 +91,11 @@
       map.fitBounds(bounds);
     });
   }
+  // マーカーにクリックイベントを追加
+    function markerEvent(i) {
+        marker[i].addListener('click', function() { // マーカーをクリックしたとき
+          infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+      });
+    }
+    
 </script>
