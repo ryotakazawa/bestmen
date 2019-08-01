@@ -36,12 +36,14 @@
       for (i = 0;i < markerData.length;i++) {
           // マーカーを生成
           marker[i] = new google.maps.Marker({
+              
               position: new google.maps.LatLng(markerData[i].latitude, markerData[i].longitude),
               title: markerData[i].title
           });
+          var picId = markerData[i].id;
           // ウィンドウを生成
           infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-            content: '<div class="sample">' + markerData[i].title + '</div>' // 吹き出しに表示する内容
+            content: '<div class="sample">' +  `<a href="https://275d306158d242539584f1e9a9759200.vfs.cloud9.ap-northeast-1.amazonaws.com/pics/${picId}">${marker[i].title}</a>` + '</div>' // 吹き出しに表示する内容
           });
           
           // マーカーを地図に表示
