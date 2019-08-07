@@ -18,7 +18,7 @@
             <%= link_to pic.title, pic, {class: "pic-title"} %>
           </div>
           <div class="pic-desc">
-            <p><%= pic.description %></p>
+            <p><%= truncate(pic.description, length: 100) %></p>
           </div>
         </div>
       </div>
