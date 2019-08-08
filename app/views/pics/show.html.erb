@@ -8,6 +8,7 @@
   <div class="ramen-name">
     <h1><%= @pic.title %></h1>
   </div>
+  認定者:<%= link_to @pic.user.name, user_path(@pic.user.id) %>
   ジャンル:<%= link_to @pic.tag_list, pics_path(tag_name: @pic.tag_list) %>
   いいね:<%= render partial: 'pics/like', locals: { pic: @pic} %>
   <% if @pic.user == current_user %>
