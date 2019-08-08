@@ -1,93 +1,22 @@
-<div class="container">
-    <div class="profile-env">
-        <header class="row">
-            <div class="col-sm-2">
-                
-            </div>
-            <div class="col-sm-7">
-                <ul class="profile-info-sections">
-                    <li>
-                        <div class="profile-name">
-                            <strong>
-                                <%= link_to @user.name, @user %>
-                            </strong>
-                            <span>
-                                <a href="#">Co-Founder at Google</a>
-                            </span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="profile-stat">
-                            <h3>643</h3>
-                            <span>
-                                <a href="#">フォロワー</a>
-                            </span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="profile-stat">
-                            <h3>108</h3>
-                            <span>
-                                <a href="#">フォロー</a>
-                            </span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="profile-stat">
-                            <h3><%= @user.pics.count %></h3>
-                            <span>
-                                <a href="#">件認定済</a>
-                            </span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-3">
-                <div class="profile-buttons">
-                    <a href="#" class="btn btn-default">
-                        Follow
-                    </a>
-                </div>
-            </div>
-        </header>
-        <section class="profile-info-tabs">
-            <div class="row">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <ul class="user-details">
-                        <li>
-                            <a href="#">
-                                <i class="entypo-location"></i>
-                                Prishtina
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="entypo-location"></i>
-                                Prishtina
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="entypo-location"></i>
-                                Prishtina
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- tabs for the profile links -->
-                    <ul class="nav nav-tabs nav-fill">
-                        <li class="active">
-                            <a href="#profile-info">Profile</a>
-                        </li>
-                        <li>
-                            <a href="#biography">Bio</a>
-                        </li>
-                        <li>
-                            <a href="#profile-edit">Edit Profile</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<div class="container text-center", style='margin-top: 60px;'>
+    <div class="page-title">
+        <h1><%= @user.name %></h1>
     </div>
+    <ul id="myTabs" class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="#home"  aria-controls="home" role="tab" data-toggle="tab" class="nav-link active">認定リスト</a>
+      </li>
+      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" class="nav-link">いいねリスト</a></li>
+      <li role="presentation"><a href="#message" aria-controls="message" role="tab" data-toggle="tab" class="nav-link">コメント</a></li>
+    </ul>
+    <div class="tab-content p-2 ">
+      <div role="tabpanel" class="tab-pane active fade show" id="home">
+        投稿したもの
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="profile">
+        いいねしたもの
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="message">
+      </div>
+  </div>
     <%= link_to "ログアウト", sign_out_path %>
 </div>

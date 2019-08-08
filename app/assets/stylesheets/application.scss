@@ -19,9 +19,9 @@
 @import "comments";
 @import "colors";
 @import "home";
+@import "like";
 @import "maps";
 @import "pics";
-@import "static_pages";
 @import "users";
 @import "users_signin_and_login";
 
@@ -82,7 +82,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -102,6 +101,7 @@ p {
 
 .page-title{
   font-family: 'rounded-l-mgenplus-2c-bold';
+  margin-bottom: 30px;
 }
 
 /* container */

@@ -9,9 +9,9 @@ class PicsController < ApplicationController
     if params[:q]
       @pics = @search.result.includes(:user, :taggings).page(params[:page]).per(3)
     elsif params[:tag_name]
-      @pics = Pic.tagged_with(params[:tag_name]).includes(:user, :taggings).page(params[:page]).per(3)
+      @pics = Pic.tagged_with(params[:tag_name]).page(params[:page]).per(3)
     else
-      @pics = Pic.all.order("created_at DESC").includes(:user, :taggings).page(params[:page]).per(3)
+      @pics = Pic.all.order("created_at DESC").page(params[:page]).per(3)
     end
   end
   
