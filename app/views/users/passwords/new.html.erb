@@ -1,7 +1,10 @@
 <% provide(:title, "パスワードの再設定") %>
 
-<h2>パスワードの再設定</h2>
-
+<div class="container", style='margin-top: 60px;'>
+  <div class="page-title">
+    <h1>パスワードの再設定</h1>
+  </div>
+  <h7>*ご登録済みのメールアドレスにパスワードの再設定方法を送信します</h7>
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -11,8 +14,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "パスワードの再設定方法を送信する" %>
+    <%= f.submit "送信する" %>
   </div>
 <% end %>
-
-<%= render "users/shared/links" %>
+</div>
