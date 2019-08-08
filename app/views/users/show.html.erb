@@ -10,10 +10,10 @@
     </ul>
     <div class="tab-content p-2 ">
       <div role="tabpanel" class="tab-pane active fade show" id="home">
-        投稿したもの
+        <%= render partial: 'users/posted_pics' %> <!-- ここで表示画面変更 -->
       </div>
       <div role="tabpanel" class="tab-pane fade" id="profile">
-        いいねしたもの
+        <%= render partial: 'users/liked_pics' %> <!-- ここで表示画面変更 -->
       </div>
       <div role="tabpanel" class="tab-pane fade" id="message">
       </div>
