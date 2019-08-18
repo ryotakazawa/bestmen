@@ -1,9 +1,13 @@
-<% if current_user.liked? pic %>
-  <%= link_to unlike_pic_path(pic), method: :put, remote: true, id: "like_#{pic.id}" do %>
-    <i class="fa fa-heart likes"><%= pic.get_likes.size %></i>
+<% if current_user %>
+  <% if current_user.liked? pic %>
+    <%= link_to unlike_pic_path(pic), method: :put, remote: true, id: "like_#{pic.id}" do %>
+      <i class="fa fa-heart likes"><%= pic.get_likes.size %></i>
+    <% end %>
+  <% else %>
+    <%= link_to like_pic_path(pic), method: :put, remote: true, id: "like_#{pic.id}" do %>
+      <i class="fa fa-heart-o likes"><%= pic.get_likes.size %></i>
+    <% end %>
   <% end %>
 <% else %>
-  <%= link_to like_pic_path(pic), method: :put, remote: true, id: "like_#{pic.id}" do %>
-    <i class="fa fa-heart-o likes"><%= pic.get_likes.size %></i>
-  <% end %>
+  <i class="fa fa-heart-o likes"><%= pic.get_likes.size %></i>
 <% end %>

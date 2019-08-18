@@ -41,6 +41,8 @@
         <% if user_signed_in? %>
           <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
           <%= render partial: 'comments/form', locals: { comment: @comment, pic: @picCommen } %>
+        <% else %>
+          <%= link_to "コメントするにはログインが必要です", new_user_session_path, class: "nav-link" %>
         <% end %>
       </div>
     </div>
