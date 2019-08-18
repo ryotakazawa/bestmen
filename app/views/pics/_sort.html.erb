@@ -12,5 +12,7 @@
 <%= search_form_for @search do |f| %>
   <%= f.label :title_cont, "店名で検索" %>
   <%= f.search_field :title_cont %>
-  <div class="actions"><%= f.submit "検索" %></div>
+  <div class="actions">
+    <%= f.submit "検索" %>
+  </div>
 <% end %>
