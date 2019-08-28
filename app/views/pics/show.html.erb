@@ -12,8 +12,11 @@
   ジャンル:<%= link_to @pic.tag_list, pics_path(tag_name: @pic.tag_list) %>
   いいね:<%= render partial: 'pics/like', locals: { pic: @pic} %>
   <% if @pic.user == current_user %>
+  <div>
+    <br>
     <div class="btn btn-info"><%= link_to "編集", edit_pic_path %></div>
     <div class="btn btn-danger"><%= link_to "削除", pic_path, method: :delete, data: {confirm: "一度削除した投稿は復元できません。よろしいですか？"} %></div>
+  </div>
   <% end %>
   
   <div class="container">
