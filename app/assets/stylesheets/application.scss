@@ -104,6 +104,11 @@ p {
   margin-bottom: 30px;
 }
 
+/* body */
+body{
+  padding-top: 61.45px;
+}
+
 /* container */
 .container{
   padding-top: 50px;
@@ -138,6 +143,11 @@ p {
 
 
 /* header */
+.header{
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
 .navbar{
   background-color: $ramen-red;
 }
@@ -158,18 +168,6 @@ p {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-/*flash*/
-.notice {
-  background-color: green;
-  color: #white;
-  text-align: center;
-}
-
-.alert {
-  background-color: red;
-  color: #white;
-  text-align: center;
-}
 
 /* footer */
 

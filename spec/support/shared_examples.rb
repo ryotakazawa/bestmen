@@ -7,7 +7,7 @@ shared_examples_for 'signup-form have right css' do
   it { expect(page).to have_css('label', text: 'ユーザーネーム') }
   it { expect(page).to have_css('label', text: 'メールアドレス') }
   it { expect(page).to have_css('label', text: 'パスワード') }
-  it { expect(page).to have_css('label', text: 'パスワード確認(もう一度同じパスワードを入力してください)') }
+  it { expect(page).to have_css('label', text: 'パスワード確認(再度パスワードを入力してください)') }
   it { expect(page).to have_css('input#user_name') }
   it { expect(page).to have_css('input#user_email') }
   it { expect(page).to have_css('input#user_password') }
@@ -83,7 +83,7 @@ shared_examples_for 'fail create pic' do
   scenario 'user increment 0' do
     expect do
       visit new_pic_path
-      fill_in_pic_new_form(:pic) # => SupportModule を使用
+      fill_in_pic_new_form(:pic, invalid: true) # => SupportModule を使用
       click_button '登録する'
     end.to change(Pic, :count).by(0)
     # メッセージ
