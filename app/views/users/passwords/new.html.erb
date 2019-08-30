@@ -1,20 +1,28 @@
 <% provide(:title, "パスワードの再設定") %>
 
-<div class="container", style='margin-top: 60px;'>
-  <div class="page-title">
-    <h1>パスワードの再設定</h1>
+<div class="ramen-background2">
+<div class="container">
+  <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <div class="form-signin">
+              <h1 class="card-title text-center page-title">パスワードの再設定</h1>
+              <h6 class="card-subtitle text-center mb-2 text-muted">*ご登録済みのメールアドレスにパスワードの再設定方法を送信します</h6>
+              <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                <%= render "devise/shared/error_messages", resource: resource %>
+                <div class="form-label-group">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+                </div>
+              
+                <div class="actions">
+                  <%= f.submit "送信する", class: "btn btn-primary jelly" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
-  <h7>*ご登録済みのメールアドレスにパスワードの再設定方法を送信します</h7>
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "送信する" %>
-  </div>
-<% end %>
 </div>

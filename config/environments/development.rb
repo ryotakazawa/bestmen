@@ -1,6 +1,19 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
+  # default url
+  config.action_mailer.default_url_options = {  protocol: 'https', host: 'https://275d306158d242539584f1e9a9759200.vfs.cloud9.ap-northeast-1.amazonaws.com/' }
+  # mail setting
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :user_name => "ippai.office@gmail.com",
+    :password => "fxnltowrzldlnuhp",
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -29,7 +42,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  
 
   config.action_mailer.perform_caching = false
 
