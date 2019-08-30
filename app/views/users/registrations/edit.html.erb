@@ -1,43 +1,61 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<% provide(:title, "ユーザー情報の編集") %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h1 class="card-title text-center page-title">ユーザー情報の編集</h1>
+          <div class="form-signin">
+             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              
+              <div class="form-label-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+              </div>
+            
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+            
+              <div class="form-label-group">
+                <%= f.label :password %> <i>(変更しない場合は空欄のまま)</i><br />
+                <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+                <% if @minimum_password_length %>
+                  <br />
+                  <em><%= @minimum_password_length %>文字以上</em>
+                <% end %>
+              </div>
+            
+              <div class="form-label-group">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+              </div>
+            
+              <div class="form-label-group">
+                <%= f.label :current_password %> <i>(今現在のパスワードを入力して下さい)</i><br />
+                <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
+              </div>
+            
+              <div class="actions">
+                <%= f.submit "更新", class: "btn btn-primary jelly" %>
+              </div>
+            <% end %>
+          </div>
+          <br></br>
+          <h1 class="card-title text-center page-title">アカウントの削除</h1>
+          <h6 class="card-subtitle text-center mb-2 text-muted">アカウントを削除します。<br></br>一度削除されたアカウントは復旧できません。</h6>
+          <div class="actions">
+            <%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger jelly" %>
+          </div>
+          <br></br>
+          <div class="text-center">
+            <%= link_to "ユーザーページに戻る", :back %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(変更しない場合は空欄のまま)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %>文字以上</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(今現在のパスワードを入力して下さい)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "更新" %>
-  </div>
-<% end %>
-
-<h3>アカウントの削除</h3>
-
-<p>アカウントを削除します。一度削除されたアカウントは復旧できません。 <%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "ユーザーページに戻る", :back %>
