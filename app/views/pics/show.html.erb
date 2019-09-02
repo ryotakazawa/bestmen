@@ -36,14 +36,15 @@
         <div id="map" style='height: 300px;'></div>
       </div>
       <div role="tabpanel" class="tab-pane fade" id="message">
-        <h4>コメント</h4>
         <div id="comments_area" class="commentList"><!-- #① -->
           <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
           <%= render partial: 'comments/index', locals: { comments: @comments, pic: @pic } %>
         </div>  
         <% if user_signed_in? %>
           <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-          <%= render partial: 'comments/form', locals: { comment: @comment, pic: @picCommen } %>
+          <div class="commentForm">
+            <%= render partial: 'comments/form', locals: { comment: @comment, pic: @picCommen } %>
+          </div>
         <% else %>
           <%= link_to "コメントするにはログインが必要です", new_user_session_path, class: "nav-link" %>
         <% end %>
