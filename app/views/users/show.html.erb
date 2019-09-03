@@ -1,7 +1,10 @@
 <div class="container text-center">
     <div class="page-title">
-        <h1><%= @user.name %></h1>
+      <h1><%= @user.name %></h1>
     </div>
+    <% if current_user.id == @user.id %>
+      <%= link_to "編集する", edit_user_registration_path %>
+    <% end %>
     <ul id="myTabs" class="nav nav-tabs">
       <li role="presentation" class="active"><a href="#posted_pics"  aria-controls="posted_pics" role="tab" data-toggle="tab" class="nav-link active">認定リスト</a>
       </li>
