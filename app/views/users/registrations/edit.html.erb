@@ -20,21 +20,18 @@
               <% end %>
             
               <div class="form-label-group">
-                <%= f.label :password %> <i>(変更しない場合は空欄のまま)</i><br />
+                <%= f.label :password, '新しいパスワード' %> <i>(<em><%= @minimum_password_length %>文字以上</em>・変更する場合は入力)</i><br />
                 <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
-                <% if @minimum_password_length %>
-                  <br />
-                  <em><%= @minimum_password_length %>文字以上</em>
-                <% end %>
               </div>
             
               <div class="form-label-group">
-                <%= f.label :password_confirmation %><br />
+                <%= f.label :password_confirmation, '新しいパスワードを再度入力' %>
                 <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
               </div>
+              </br>
             
               <div class="form-label-group">
-                <%= f.label :current_password %> <i>(今現在のパスワードを入力して下さい)</i><br />
+                <%= f.label :current_password, '更新の為、今現在のパスワードを入力して下さい' %> 
                 <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
               </div>
             
@@ -46,7 +43,7 @@
           <br></br>
           <h1 class="card-title text-center page-title">アカウントの削除</h1>
           <h6 class="card-subtitle text-center mb-2 text-muted">アカウントを削除します。<br></br>一度削除されたアカウントは復旧できません。</h6>
-          <div class="actions">
+          <div class="actions" style="margin-top: 20px">
             <%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger jelly" %>
           </div>
           <br></br>
