@@ -15,9 +15,14 @@
                 <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control' %>
               </div>
             	
-            	<%= f.label :image %>
+            	<%= f.label :image, '画像' %>
               <%= f.file_field :image, label: '画像', as: :file, onchange: "previewFile()", input_html: { class: 'form-controll'} %>
             	<img src="" id="preview" height="200" > <!-- プレビューの表示枠を用意 -->
+            	
+            	<div class="form-label-group">
+                <%= f.label :profile, 'プロフィール' %><br />
+                <%= f.text_area :profile, autofocus: true, autocomplete: "profile", class: 'form-control' %>
+              </div>
               
               <div class="form-label-group">
                 <%= f.label :email %><br />

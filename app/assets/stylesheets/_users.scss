@@ -1,6 +1,12 @@
 // 本番用
 .user-pic{
-  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-    width:  200px;       /* ※縦横を同値に */
-    height: 200px;       /* ※縦横を同値に */
+  border-radius: 50%;
+  width:  200px;
+  height: 200px;
+}
+.user_profile{
+  margin-top: 30px;
+}
+.user-activities{
+  margin-top: 20px;
 }

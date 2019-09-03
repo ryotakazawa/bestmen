@@ -6,26 +6,32 @@
       <%= image_tag(@user.image.url(:thumb), class:'user-pic' )%>
     </div>
     <div class="user_profile">
-      
+      <% if @user.profile %>
+        <%= @user.profile %>
+      <% else %>
+        <p>プロフィールが入力されていません</p>
+      <% end %>
     </div>
     <% if current_user.id == @user.id %>
       <%= link_to "編集する", edit_user_registration_path %>
     <% end %>
-    <ul id="myTabs" class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="#posted_pics"  aria-controls="posted_pics" role="tab" data-toggle="tab" class="nav-link active">認定リスト</a>
-      </li>
-      <li role="presentation"><a href="#liked_pics" aria-controls="liked_pics" role="tab" data-toggle="tab" class="nav-link">いいねリスト</a></li>
-      <li role="presentation"><a href="#message" aria-controls="message" role="tab" data-toggle="tab" class="nav-link">コメント</a></li>
-    </ul>
-    <div class="tab-content p-2 ">
-      <div role="tabpanel" class="tab-pane active fade show" id="posted_pics">
-        <%= render partial: 'users/posted_pics' %> <!-- ここで表示画面変更 -->
-      </div>
-      <div role="tabpanel" class="tab-pane fade" id="liked_pics">
-        <%= render partial: 'users/liked_pics' %> <!-- ここで表示画面変更 -->
-      </div>
-      <div role="tabpanel" class="tab-pane fade" id="message">
-      </div>
-  </div>
+    <div class="user-activities">
+      <ul id="myTabs" class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#posted_pics"  aria-controls="posted_pics" role="tab" data-toggle="tab" class="nav-link active">認定リスト</a>
+        </li>
+        <li role="presentation"><a href="#liked_pics" aria-controls="liked_pics" role="tab" data-toggle="tab" class="nav-link">いいねリスト</a></li>
+        <li role="presentation"><a href="#message" aria-controls="message" role="tab" data-toggle="tab" class="nav-link">コメント</a></li>
+      </ul>
+      <div class="tab-content p-2 ">
+        <div role="tabpanel" class="tab-pane active fade show" id="posted_pics">
+          <%= render partial: 'users/posted_pics' %> <!-- ここで表示画面変更 -->
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="liked_pics">
+          <%= render partial: 'users/liked_pics' %> <!-- ここで表示画面変更 -->
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="message">
+        </div>
+    </div>
+    </div>
     <%= link_to "ログアウト", sign_out_path %>
 </div>
