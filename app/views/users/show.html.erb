@@ -2,8 +2,11 @@
     <div class="page-title">
       <h1><%= @user.name %></h1>
     </div>
-    <div class="user-pic">
-      <%= image_tag(@user.image.url(:thumb))%>
+    <div>
+      <%= image_tag(@user.image.url(:thumb), class:'user-pic' )%>
+    </div>
+    <div class="user_profile">
+      
     </div>
     <% if current_user.id == @user.id %>
       <%= link_to "編集する", edit_user_registration_path %>
