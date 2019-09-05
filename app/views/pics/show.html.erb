@@ -1,16 +1,17 @@
 <% provide(:title, @pic.title) %>
 
-
 <div class="container text-center">
   <div class="ramen-pic">
     <%= image_tag(@pic.image.url(:medium))%>
   </div>
-  <div class="ramen-name">
+  <div class="ramen-title-show">
     <h1><%= @pic.title %></h1>
   </div>
-  認定者:<%= link_to @pic.user.name, user_path(@pic.user.id) %>
-  ジャンル:<%= link_to @pic.tag_list, pics_path(tag_name: @pic.tag_list) %>
-  いいね:<%= render partial: 'pics/like', locals: { pic: @pic} %>
+  <div class="ramen-info">
+    認定者:<%= link_to @pic.user.name, user_path(@pic.user.id) %>
+    ジャンル:<%= link_to @pic.tag_list, pics_path(tag_name: @pic.tag_list) %>
+    いいね:<%= render partial: 'pics/like', locals: { pic: @pic} %>
+  </div>
   <% if @pic.user == current_user %>
   <div>
     <br>
@@ -29,7 +30,7 @@
     </ul>
     <!-- Tab panes(以下、タブを押したときに表示する中身) -->
     <div class="tab-content p-2 ">
-      <div role="tabpanel" class="tab-pane active fade show" id="home">
+      <div role="tabpanel" class="tab-pane active fade show ramen-desc-show lightgrey-background" id="home">
         <p><%= @pic.description %></p>
       </div>
       <div role="tabpanel" class="tab-pane fade" id="profile">

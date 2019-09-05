@@ -305,4 +305,15 @@ input {
 /*kaminari*/
 .pagination{
   justify-content: center;
+  margin-bottom: 20px;
+}
+
+/*background*/
+.grey-background{
+  background-color:rgba(192,192,192,0.3);
+  border-radius: 10px;
+}
+.lightgrey-background{
+  background-color:rgba(192,192,192,0.15);
+  border-radius: 10px;
 }

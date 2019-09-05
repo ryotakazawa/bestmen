@@ -1,4 +1,4 @@
-カテゴリーで絞る
+・カテゴリーで絞る</br>
 <%= link_to "醤油",     pics_path(tag_name: "醤油") %>
 <%= link_to "塩",       pics_path(tag_name: "塩") %>
 <%= link_to "味噌",     pics_path(tag_name: "味噌") %>
@@ -10,9 +10,12 @@
 <%= link_to "その他",   pics_path(tag_name: "その他") %>
 
 <%= search_form_for @search do |f| %>
-  <%= f.label :title_cont, "店名で検索" %>
-  <%= f.search_field :title_cont %>
+  <div class="form-label-group">
+    <%= f.label :title_cont, "・店名で検索" %>
+    <%= f.search_field :title_cont, class: 'form-control' %>
+  </div>
   <div class="actions">
-    <%= f.submit "検索" %>
+    <%= f.submit "検索", class: "btn btn-primary" %>
   </div>
 <% end %>
+
