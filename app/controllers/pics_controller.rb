@@ -22,6 +22,7 @@ class PicsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @pic.comments.includes(:user)
+    @pic.address.slice!(0..2)
   end
   
   def create

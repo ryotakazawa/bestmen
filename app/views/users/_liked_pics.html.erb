@@ -1,27 +1,33 @@
 <div class="row">
-  <% @liked_pics.each do |pic| %>
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="ramen-box">
-        <div class="hover-parent d-block mx-auto">
-          <%= link_to image_tag(pic.image.url(:medium), size: '300x300'), pic, remote: true %>
-          <%= link_to pic, remote: true do %>
-            <div class="mask text-center">
-              <div class="caption"><%= pic.title %></div>
-              <%= pic.get_likes.size %>
-            </div>
-          <% end %>
-        </div>
-        <div class="ramen-info">
-          <div class="ramen-like">
-            <%= render partial: 'pics/like', locals: { pic: pic} %>
+    <% @liked_pics.each do |pic| %>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="ramen-box">
+          <div class="hover-parent d-block mx-auto">
+              <%= link_to image_tag(pic.image.url(:medium), size: '300x300'), pic, remote: true %>
+              <%= link_to pic, remote: true do %>
+                <div class="mask text-center">
+                  <div class="caption"><%= pic.title %></div>
+                  <%= pic.get_likes.size %>
+                </div>
+              <% end %>
           </div>
-          <%= link_to pic.title, pic, {class: "ramen-title-index"} %>
-        </div>
-        <div class="ramen-desc-index">
-          <p><%= truncate(pic.description, length: 100) %></p>
+          <div class="ramen-info-index">
+            <div class="ramen-like">
+              <%= render partial: 'pics/like', locals: { pic: pic} %>
+            </div>
+            <%= link_to pic.title, pic, {class: "ramen-title-index"} %></br>
+            <div class="ramen-address-index">
+              <% pic.address.slice!(0..2) %>
+              <%= truncate(pic.address, length: 13) %>
+            </div>
+          </div>
+          <div class="ramen-desc-index">
+            <p><%= truncate(pic.description, length: 100) %></p>
+          </div>
         </div>
       </div>
-    </div>
     <% end %>
 </div>
-<%= paginate @liked_pics %>
+<div class="pagination">
+  <%= paginate @liked_pics %>
+</div>

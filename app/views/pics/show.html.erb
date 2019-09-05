@@ -7,9 +7,10 @@
   <div class="ramen-title-show">
     <h1><%= @pic.title %></h1>
   </div>
-  <div class="ramen-info">
-    認定者:<%= link_to @pic.user.name, user_path(@pic.user.id) %>
-    ジャンル:<%= link_to @pic.tag_list, pics_path(tag_name: @pic.tag_list) %>
+  <div class="ramen-info-show grey-background">
+    認定者:<%= link_to @pic.user.name, user_path(@pic.user.id) %></br>
+    ジャンル:<%= link_to @pic.tag_list, pics_path(tag_name: @pic.tag_list) %></br>
+    所在地:<%= @pic.address %></br>
     いいね:<%= render partial: 'pics/like', locals: { pic: @pic} %>
   </div>
   <% if @pic.user == current_user %>

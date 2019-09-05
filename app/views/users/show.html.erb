@@ -5,7 +5,7 @@
     <div>
       <%= image_tag(@user.image.url(:thumb), class:'user-pic' )%>
     </div>
-    <div class="user_profile">
+    <div class="user_profile lightgrey-background">
       <% if @user.profile %>
         <%= @user.profile %>
       <% else %>
@@ -13,7 +13,9 @@
       <% end %>
     </div>
     <% if current_user.id == @user.id %>
+    <div class="user-edit-link">
       <%= link_to "編集する", edit_user_registration_path %>
+    </div>
     <% end %>
     <div class="user-activities">
       <ul id="myTabs" class="nav nav-tabs">
@@ -33,5 +35,7 @@
         </div>
     </div>
     </div>
-    <%= link_to "ログアウト", sign_out_path %>
+    <div class="user-logout-link">
+      <%= link_to "ログアウト", sign_out_path, class:"btn btn-danger" %>
+    </div>
 </div>

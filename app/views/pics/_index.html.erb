@@ -11,11 +11,15 @@
                 </div>
               <% end %>
           </div>
-          <div class="ramen-info">
+          <div class="ramen-info-index">
             <div class="ramen-like">
               <%= render partial: 'pics/like', locals: { pic: pic} %>
             </div>
-            <%= link_to pic.title, pic, {class: "ramen-title-index"} %>
+            <%= link_to pic.title, pic, {class: "ramen-title-index"} %></br>
+            <div class="ramen-address-index">
+              <% pic.address.slice!(0..2) %>
+              <%= truncate(pic.address, length: 13) %>
+            </div>
           </div>
           <div class="ramen-desc-index">
             <p><%= truncate(pic.description, length: 100) %></p>
