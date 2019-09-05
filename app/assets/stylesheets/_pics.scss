@@ -23,8 +23,10 @@
   margin-bottom: 50px;
 }
 
-.ramen-info{
-  height: 25px;
+.ramen-info-index{
+  height: 50px;
+  padding-left: 5px;
+  padding-right: 5px;
   background-color:rgba(192,192,192,0.3);
 }
 
@@ -43,16 +45,29 @@
   padding: 10px;
 }
 
+.ramen-address-index{
+  text-align:right;
+}
+
 //show.html.erb
 .ramen-pic{
-    padding-top: 30px;
+    padding-bottom: 5px;
 }
 
 .ramen-title-show{
     h1{
     font-family: 'rounded-l-mgenplus-2c-bold';
     padding-top: 15px;
+    padding-bottom: 5px;
+    display: inline-block;
+    border-bottom: groove 5px $ramen-red;
     }
+}
+
+.ramen-info-show{
+  padding: 10px;
+  margin-top: 10px;
+  display: inline-block;
 }
 
 .ramen-desc-show{
@@ -60,7 +75,6 @@
 }
 
 .tab-content{
-  margin-top: 10px;
   margin-bottom: 30px;
 }
 
