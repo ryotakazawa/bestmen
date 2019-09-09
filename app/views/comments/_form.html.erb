@@ -1,4 +1,4 @@
 <%= simple_form_for [@pic, @pic.comments.build], remote: true do |f| %>
-  <%= f.input :content, label: 'コメントする' %>
+  <%= f.input :content , label: 'コメントする' %>
   <%= f.button :submit , '送信', class: "btn btn-primary" %>
 <% end %>
