@@ -1,5 +1,11 @@
-<div class="container", style="padding-top: 90px;">
-	<h1>編集</h1>
-	<%= link_to image_tag(@pic.image.url(:medium)) %>
-	<%= render "pics/form"%>
+<div class="container">
+	<div class="page-title">
+		<h1>編集</h1>
+	</div>
+	<div class="ramen-new-form lightgrey-background">
+		<div class="text-center" style="padding-bottom: 30px">
+			<%= link_to image_tag(@pic.image.url(:medium)) %>
+		</div>
+		<%= render "pics/form"%>
+	</div>
 </div>
