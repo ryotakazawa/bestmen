@@ -1,35 +1,37 @@
 <%= simple_form_for @pic, html:{multipart: true} do |f| %>
   <% if @pic.errors.any? %>
-    <h2>入力エラーが<%= pluralize(@pic.errors.count, "箇所") %>あります</h2>
-    <ul>
-      <% @pic.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+    <div id="error_explanation">
+      <h2>入力エラーが<%= pluralize(@pic.errors.count, "箇所") %>あります</h2>
+      <ul>
+        <% @pic.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
   
   <div class="form-label-group">
-    <%= f.input :title, label: '店名', input_html: { class: 'form-controll'} %>
+    <%= f.input :title, input_html: { class: 'form-controll'} %>
   </div>
   
   <%= f.label :image %>
-  <%= f.file_field :image, label: '画像', as: :file, onchange: "previewFile()", input_html: { class: 'form-controll'} %>
+  <%= f.file_field :image, as: :file, onchange: "previewFile()", input_html: { class: 'form-controll'} %>
 	<img src="" id="preview" height="200" > <!-- プレビューの表示枠を用意 -->
   
   
   <div class="form-label-group">
-    <%= f.input :address, label: '住所', input_html: { class: 'form-controll'} %>
+    <%= f.input :address, input_html: { class: 'form-controll'} %>
   </div>
   
   <input id= "pac-input", class= "controls", type= "text", placeholder= "店名を入力し、合致する予想変換をセレクトして下さい">
   <button onclick="copyToClipboard()", type= "button">コピー</button>
   <div id="map" style='height: 300px;'></div></br>
   
-  <%= f.label "ジャンル" %>
-  <%= f.select :tag_list,  [["醤油", "醤油"],["塩", "塩"],["味噌", "味噌"],["豚骨", "豚骨"],["担々麺", "担々麺"],["家系", "家系"],["魚介系", "魚介系"],["激辛系", "激辛系"],["その他", "その他"]], :include_blank => true, label: '店名', input_html: { class: 'form-controll'} %>
+  <%= f.label :tag_list, 'ジャンル' %>
+  <%= f.select :tag_list, [["醤油", "醤油"],["塩", "塩"],["味噌", "味噌"],["豚骨", "豚骨"],["担々麺", "担々麺"],["家系", "家系"],["魚介系", "魚介系"],["激辛系", "激辛系"],["その他", "その他"]], :include_blank => true, input_html: { class: 'form-controll'}, label: "ジャンル" %>
   
   <div class="form-label-group">
-    <%= f.input :description, label: '認定理由', input_html: { class: 'form-controll'} %>
+    <%= f.input :description, input_html: { class: 'form-controll'} %>
   </div>
   
   <%= f.button :submit, type: 'button', onclick: 'submit();', class: "btn btn-primary" %>

@@ -9,8 +9,10 @@ ja:
         password_confirmation: "パスワード確認(再度パスワードを入力してください)"
         remember_me: "ログインを記憶"
       pic:
-        image: "画像"
         title: "店名"
+        image: "画像"
+        address: "住所"
+        tag_list: "ジャンル"
         description: "認定理由"
     models:
       user: "ユーザ"
