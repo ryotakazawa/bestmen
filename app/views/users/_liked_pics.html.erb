@@ -18,7 +18,7 @@
             <%= link_to pic.title, pic, {class: "ramen-title-index"} %></br>
             <div class="ramen-address-index">
               <% pic.address.slice!(0..2) %>
-              <%= truncate(pic.address, length: 13) %>
+              <i class="fas fa-map-marker-alt", style="padding: 0 3px"></i><%= truncate(pic.address, length: 13) %>
             </div>
           </div>
           <div class="ramen-desc-index">

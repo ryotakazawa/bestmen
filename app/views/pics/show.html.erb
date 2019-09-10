@@ -21,7 +21,19 @@
   </div>
   <% end %>
   
-  <div class="container">
+  <div id='sosyal'>
+   <%= link_to "https://twitter.com/share?url=#{request.url}&text=#{@pic.title}☆BESTMEN -1番だけをシェアしよう-☆", class: 'twitter share-btn', title: 'Twitter', target: '_blank' do %>
+     <i class="fab fa-twitter"></i>
+   <% end %>
+   <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.url}&text=#{@pic.title}☆BESTMEN -1番だけをシェアしよう-☆", class: 'facebook share-btn', title: 'Facebook', target: '_blank' do %>
+     <i class="fab fa-facebook"></i>
+   <% end %>
+   <%= link_to "http://line.me/R/msg/text/?#{request.url}&text=#{@pic.title}☆BESTMEN -1番だけをシェアしよう-☆", class: 'line share-btn', title: 'LINE', target: '_blank' do %>
+     <i class="fab fa-line"></i>
+   <% end %>
+  </div>
+  
+  <div class="container" style="padding-top: 30px">
     <!-- 以下タブの表示設定 -->
     <ul id="myTabs" class="nav nav-tabs">
       <li role="presentation" class="active"><a href="#home"  aria-controls="home" role="tab" data-toggle="tab" class="nav-link active">認定理由</a>
