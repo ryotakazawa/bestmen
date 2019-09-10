@@ -1,4 +1,4 @@
-<input id="pac-input" class="controls" type="text" placeholder="地名や店名で検索">
+<input id="pac-input" class="controls" type="text" placeholder="地名や店名で検索" style="padding-top: 10px">
 <div id="map"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLE_MAP_API_KEY"]%>&libraries=places&callback=initAutocomplete" async defer></script>
@@ -10,102 +10,99 @@
   // This example requires the Places library. Include the libraries=places
   // parameter when you first load the API. For example:
   // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-    // データの変数定義
-    var marker = [];
-    var infoWindow = [];
-    var markerData = <%=  raw @array_pics.to_json %>;
+  // データの変数定義
+  var marker = [];
+  var infoWindow = [];
+  var markerData = <%=  raw @array_pics.to_json %>;
     
-    function initAutocomplete() {
-      // マップの表示
-      var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 35.681236, lng: 139.767125},
-          zoom: 13,
-          mapTypeId: 'roadmap'
-        });
-
-      // 検索窓の表示
-      var input = document.getElementById('pac-input');
-      var searchBox = new google.maps.places.SearchBox(input);
-      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  
-      // 検索窓のレスポンシビブ化
-      map.addListener('bounds_changed', function() {
-        searchBox.setBounds(map.getBounds());
-        });
-      
-      for (i = 0;i < markerData.length;i++) {
-          // マーカーを生成
-          marker[i] = new google.maps.Marker({
-              
-              position: new google.maps.LatLng(markerData[i].latitude, markerData[i].longitude),
-              title: markerData[i].title
-          });
-          var picId = markerData[i].id;
-          var picFileName = markerData[i].image_file_name;
-          // ウィンドウを生成
-          infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-            content: '<div class="infoWindow">' +  
-            `<a href="https://275d306158d242539584f1e9a9759200.vfs.cloud9.ap-northeast-1.amazonaws.com/pics/${picId}">${marker[i].title}</a>` +
-            `(${markerData[i].tag_list})` +
-            '</br>' +
-            `<img src="/system/pics/images/000/000/0${picId}/thumb/${picFileName}" />` +
-            '</br>' +
-            `<a href="https://maps.google.co.jp/maps?q=loc:${marker[i].position}&iwloc=J">Google mapで見る</a>` +
-            '</div>'
-          });
-          
-          // マーカーを地図に表示
-          marker[i].setMap(map);
-          
-         // マーカーにクリックイベントを追加
-          markerEvent(i); 
-          
-      }
-      
-
-    
-      // Listen for the event fired when the user selects a prediction and retrieve
-      // more details for that place.
-      searchBox.addListener('places_changed', function() {
-        var places = searchBox.getPlaces();
-  
-        if (places.length == 0) {
-          return;
-        }
-
-      
-
-      // For each place, get the icon, name and location.
-      var bounds = new google.maps.LatLngBounds();
-      places.forEach(function(place) {
-        if (!place.geometry) {
-          console.log("Returned place contains no geometry");
-          return;
-        }
-        var icon = {
-          url: place.icon,
-          size: new google.maps.Size(71, 71),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(25, 25)
-        };
-
-        
-        if (place.geometry.viewport) {
-          // Only geocodes have viewport.
-          bounds.union(place.geometry.viewport);
-        } else {
-          bounds.extend(place.geometry.location);
-        }
+  function initAutocomplete() {
+    // マップの表示
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 35.681236, lng: 139.767125},
+        zoom: 13,
+        mapTypeId: 'roadmap'
       });
-      map.fitBounds(bounds);
+
+    // 検索窓の表示
+    var input = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(input);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    // 検索窓のレスポンシビブ化
+    map.addListener('bounds_changed', function() {
+      searchBox.setBounds(map.getBounds());
+      });
+    
+    for (i = 0;i < markerData.length;i++) {
+        // マーカーを生成
+        marker[i] = new google.maps.Marker({
+            
+            position: new google.maps.LatLng(markerData[i].latitude, markerData[i].longitude),
+            title: markerData[i].title
+        });
+        var picId = markerData[i].id;
+        var picFileName = markerData[i].image_file_name;
+        // ウィンドウを生成
+        infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
+          content: '<div class="infoWindow">' +  
+          `<a href="https://275d306158d242539584f1e9a9759200.vfs.cloud9.ap-northeast-1.amazonaws.com/pics/${picId}">${marker[i].title}</a>` +
+          `(${markerData[i].tag_list})` +
+          '</br>' +
+          `<img src="/system/pics/images/000/000/0${picId}/thumb/${picFileName}" />` +
+          '</br>' +
+          `<a href="https://maps.google.co.jp/maps?q=loc:${marker[i].position}&iwloc=J">Google mapで見る</a>` +
+          '</div>'
+        });
+        
+        // マーカーを地図に表示
+        marker[i].setMap(map);
+        
+       // マーカーにクリックイベントを追加
+        markerEvent(i); 
+        
+    }
+
+  
+    // Listen for the event fired when the user selects a prediction and retrieve
+    // more details for that place.
+    searchBox.addListener('places_changed', function() {
+      var places = searchBox.getPlaces();
+
+      if (places.length == 0) {
+        return;
+      }
+    
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+      
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
     });
   }
-  // マーカーにクリックイベントを追加
-    function markerEvent(i) {
-        marker[i].addListener('click', function() { // マーカーをクリックしたとき
-          infoWindow[i].open(map, marker[i]); // 吹き出しの表示
-      });
-    }
+// マーカーにクリックイベントを追加
+  function markerEvent(i) {
+      marker[i].addListener('click', function() { // マーカーをクリックしたとき
+        infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+    });
+  }
     
 </script>

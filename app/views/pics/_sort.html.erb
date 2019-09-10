@@ -17,11 +17,11 @@
 <%= search_form_for @search do |f| %>
   <div class="form-label-group">
     <%= f.label :title_cont, "・店名" %>
-    <%= f.search_field :title_cont, class: 'form-control' %>
+    <%= f.search_field :title_cont, class: 'form-control', placeholder: "ex.)吉村家,中本,大勝軒 etc.. " %>
   </div>
   <div class="form-label-group">
     <%= f.label :address_cont, "・エリア" %>
-    <%= f.search_field :address_cont, class: 'form-control' %>
+    <%= f.search_field :address_cont, class: 'form-control', placeholder: "ex.)東京都,福岡市,浪速区 etc.. " %>
   </div>
   <div class="actions">
     <%= f.submit "検索", class: "btn btn-primary" %>
