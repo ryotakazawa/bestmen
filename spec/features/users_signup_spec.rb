@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'UsersSignup', type: :feature do
@@ -5,7 +7,7 @@ RSpec.feature 'UsersSignup', type: :feature do
 
   describe 'signup' do
     before { visit '/users/sign_up' }
-     it_behaves_like 'signup-form have right css'
+    it_behaves_like 'signup-form have right css'
 
     context 'valid info' do
       it_behaves_like 'success create user'

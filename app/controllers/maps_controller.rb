@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class MapsController < ApplicationController
   def index
     @pics = Pic.all.includes(:taggings)
-    
+
     @array_pics = []
     @pics.each do |pic|
       @array_pics << pic

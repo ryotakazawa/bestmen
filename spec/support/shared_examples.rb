@@ -26,7 +26,7 @@ shared_examples_for 'success create user' do
       click_button '登録'
     end.to change(User, :count).by(1)
     # メッセージ
-    #expect(page).to have_css('div.alert.alert-success', text: 'Welcome to the BESTONE!')
+    # expect(page).to have_css('div.alert.alert-success', text: 'Welcome to the BESTONE!')
     # ユーザープロフィールへredirect
     expect(page).to have_current_path(user_path(User.last))
     expect(current_path).to eq user_path(User.last)
@@ -41,7 +41,7 @@ shared_examples_for 'fail create user' do
       click_button '登録'
     end.to change(User, :count).by(0)
     # メッセージ
-    #expect(page).to have_css('div.alert.alert-danger', text: 'errors')
+    # expect(page).to have_css('div.alert.alert-danger', text: 'errors')
     # サインアップページがrender
     expect(page).to have_title('新規登録 | BESTONE -1番だけをシェアしよう-')
     expect(page).to have_css('h1', text: '新規登録')
@@ -72,7 +72,7 @@ shared_examples_for 'success create pic' do
       click_button '登録する'
     end.to change(Pic, :count).by(1)
     # メッセージ
-    #expect(page).to have_css('div.alert.alert-success', text: 'Welcome to the BESTONE!')
+    # expect(page).to have_css('div.alert.alert-success', text: 'Welcome to the BESTONE!')
     # ユーザープロフィールへredirect
     expect(page).to have_current_path(pic_path(Pic.last))
     expect(current_path).to eq pic_path(Pic.last)
@@ -87,7 +87,7 @@ shared_examples_for 'fail create pic' do
       click_button '登録する'
     end.to change(Pic, :count).by(0)
     # メッセージ
-    #expect(page).to have_css('div.alert.alert-danger', text: 'errors')
+    # expect(page).to have_css('div.alert.alert-danger', text: 'errors')
     # サインアップページがrender
     expect(page).to have_title('認定する | BESTONE -1番だけをシェアしよう-')
     expect(page).to have_css('h1', text: '認定する')
