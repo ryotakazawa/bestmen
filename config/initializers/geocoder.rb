@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Geocoder.configure(
   # Geocoding options
   # timeout: 3,                 # geocoding service timeout (secs)
@@ -19,7 +21,7 @@ Geocoder.configure(
   # Calculation options
   # units: :mi,                 # :km for kilometers or :mi for miles
   # distances: :linear          # :spherical or :linear
-  
+
   # street address geocoding service (default :nominatim)
   lookup: :google,
 
@@ -27,11 +29,11 @@ Geocoder.configure(
   # ip_lookup: :maxmind,
 
   # to use an API key:
-  api_key: "#{ENV["GEOCORDING_API_KEY"]}",
+  api_key: (ENV['GEOCORDING_API_KEY']).to_s,
 
   # geocoding service request timeout, in seconds (default 3):
   timeout: 5,
 
   # set default units to kilometers:
-  units: :km,
+  units: :km
 )
