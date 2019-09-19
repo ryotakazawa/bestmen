@@ -14,7 +14,6 @@ RSpec.feature 'UsersLogin', type: :feature do
     end
 
     context 'invalid info' do
-      # 失敗 (increment: 0)
       it_behaves_like 'fail create user'
     end
   end
