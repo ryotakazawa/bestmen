@@ -2,12 +2,42 @@
 
 module SupportModule
   def fill_in_signup_form(user, option = { invalid: false })
-    if option[:invalid]
+    if option[:allblank]
       fill_in 'ユーザーネーム',                                           with: ''
       fill_in 'メールアドレス',                                           with: ''
       fill_in 'パスワード', with: ''
       fill_in 'パスワード確認(再度パスワードを入力してください)', with: ''
-    else
+    elsif option[:nameblank]
+      params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
+      fill_in 'ユーザーネーム',                                           with: ''
+      fill_in 'メールアドレス',                                           with: params[:email]
+      fill_in 'パスワード', with: params[:password]
+      fill_in 'パスワード確認(再度パスワードを入力してください)', with: params[:password]
+    elsif option[:emailblank]
+      params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
+      fill_in 'ユーザーネーム',                                           with: params[:name]
+      fill_in 'メールアドレス',                                           with: ''
+      fill_in 'パスワード', with: params[:password]
+      fill_in 'パスワード確認(再度パスワードを入力してください)', with: params[:password]
+    elsif option[:passwordblank]
+      params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
+      fill_in 'ユーザーネーム',                                           with: params[:name]
+      fill_in 'メールアドレス',                                           with: params[:email]
+      fill_in 'パスワード', with: ''
+      fill_in 'パスワード確認(再度パスワードを入力してください)', with: params[:password]
+    elsif option[:passwordconfirmationblank]
+      params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
+      fill_in 'ユーザーネーム',                                           with: params[:name]
+      fill_in 'メールアドレス',                                           with: params[:email]
+      fill_in 'パスワード', with: params[:password]
+      fill_in 'パスワード確認(再度パスワードを入力してください)', with: params[:password]
+    elsif option[:unmatchpassword]
+      params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
+      fill_in 'ユーザーネーム',                                           with: params[:name]
+      fill_in 'メールアドレス',                                           with: params[:email]
+      fill_in 'パスワード', with: params[:password]
+      fill_in 'パスワード確認(再度パスワードを入力してください)', with: '123abc'
+    else 
       params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
       fill_in 'ユーザーネーム',                                           with: params[:name]
       fill_in 'メールアドレス',                                           with: params[:email]

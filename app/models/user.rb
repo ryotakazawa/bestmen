@@ -8,7 +8,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
-
+  validates :name, presence: true
   has_attached_file :image, styles: { medium: '300x300>', thumb: '200x200>' }, default_url: '/system/pics/images/no_image_300.png'
   validates_attachment_content_type :image, content_type: %r{\Aimage/.*\z}
 
