@@ -8,7 +8,7 @@ module SupportModule
       fill_in 'パスワード', with: ''
       fill_in 'パスワード確認(再度パスワードを入力してください)', with: ''
     elsif option[:nameblank]
-      params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
+      params = attributes_for(user) 
       fill_in 'ユーザーネーム',                                           with: ''
       fill_in 'メールアドレス',                                           with: params[:email]
       fill_in 'パスワード', with: params[:password]
@@ -47,16 +47,33 @@ module SupportModule
   end
 
   def fill_in_pic_new_form(pic, option = { invalid: false })
-    if option[:invalid]
-
-      fill_in '住所', with: ''
-      fill_in '認定理由', with: ''
+    if option[:taglistblank]
+      params = attributes_for(pic)
+      fill_in '店名',                with: params[:title]
+      attach_file('pic_image', "spec/fixtures/test.jpg")
+      fill_in '住所',                with: params[:address]
+      fill_in '認定理由',            with: params[:description]
+    elsif option[:nameblank]
+      params = attributes_for(pic) 
+      fill_in '店名',                with: ''
+      attach_file('pic_image', "spec/fixtures/test.jpg")
+      fill_in '住所',                with: params[:address]
+      select  '醤油',                from: 'ジャンル'
+      fill_in '認定理由',            with: params[:description]
     else
       params = attributes_for(pic)
-      attach_file '画像',                                       with: params[:image]
-      fill_in '住所',                                           with: ''
-      select  '醤油',                                           from: 'ジャンル'
-      fill_in '認定理由', with: ''
+      fill_in '店名',                with: params[:title]
+      attach_file('pic_image', "spec/fixtures/test.jpg")
+      fill_in '住所',                with: params[:address]
+      select  '醤油',                from: 'ジャンル'
+      fill_in '認定理由',            with: params[:description]
     end
+  end
+  
+  def login_as(user)
+    visit new_user_session_path
+    fill_in 'メールアドレス',        with: user.email
+    fill_in 'パスワード',            with: user.password
+    click_button "ログイン"
   end
 end

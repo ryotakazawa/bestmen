@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :pic do
-    image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg')) }
     title { 'MyString' }
+    address {'東京都港区芝公園４丁目２−８'}
     description { 'MyText' }
   end
 end
