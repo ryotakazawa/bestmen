@@ -4,11 +4,11 @@
       <div class="commentHeader">
         <div class="commentHeader_creater">
           <div class="commentHeader_createrInfo">
-            <% if comment.user.id == current_user.id %>
-              <p><%= link_to "#{comment.user.name}", user_path(comment.user.id) %></p>
-            <% else %>
-              <p><%= link_to "#{comment.user.name}さん", user_path(comment.user.id) %></p>
-            <% end %>
+              <% if current_user && comment.user.id == current_user.id %>
+                <p><%= link_to "#{comment.user.name}", user_path(comment.user.id) %></p>
+              <% else %>
+                <p><%= link_to "#{comment.user.name}さん", user_path(comment.user.id) %></p>
+              <% end %>
           </div>
         </div>
         <div class="commentHeader_metadata"> 
