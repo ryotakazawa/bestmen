@@ -6,7 +6,7 @@ RSpec.feature 'UsersSignup', type: :feature do
   include SupportModule
 
   describe 'signup' do
-    before { visit '/users/sign_up' }
+    before { visit new_user_registration_path }
     it_behaves_like 'signup-form have right css'
 
     context 'valid info' do

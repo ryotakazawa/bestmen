@@ -12,7 +12,7 @@
         <p>プロフィールが入力されていません</p>
       <% end %>
     </div>
-    <% if current_user.id == @user.id %>
+    <% if current_user && current_user.id == @user.id %>
     <div class="user-edit-link">
       <%= link_to "編集する", edit_user_registration_path %>
     </div>

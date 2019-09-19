@@ -11,7 +11,7 @@ Capybara.configure do |config|
   Capybara.javascript_driver = :selenium_chrome_headless
 
   # Configurable options:
-  config.run_server = false            # ローカルのRack Serverを使用しない (Default: true)
+  #config.run_server = false            # ローカルのRack Serverを使用しない (Default: true)
   config.default_selector = :css       # デフォルトのセレクターを`:css`または`:xpath`で指定する (Default: :css)
   config.default_max_wait_time = 5     # Ajaxなどの非同期プロセスが終了するまで待機する最大秒数 (seconds, Default: 2)
   config.ignore_hidden_elements = true # ページ上の隠れた要素を無視するかどうか (Default: true)
