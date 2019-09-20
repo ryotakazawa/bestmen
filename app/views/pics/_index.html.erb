@@ -2,7 +2,9 @@
     <% @pics.each do |pic| %>
       <div class="col-12 col-sm-6 col-lg-4">
         <div class="ramen-box">
-          <%= link_to image_tag(pic.image.url(:medium), size: '300x300'), pic, remote: true %>
+          <div class="ramen-pic-index">
+            <%= link_to image_tag(pic.image.url(:medium), size: '300x300'), pic, remote: true %>
+          </div>
           <div class="ramen-info-index">
             <div class="ramen-like">
               <%= render partial: 'pics/like', locals: { pic: pic} %>

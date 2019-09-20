@@ -27,3 +27,6 @@
 
 # Ignore env
 /.env
+
+# Ignore env
+/erd.pdf

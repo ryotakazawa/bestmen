@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # user
-# users#new
+# registrations#new
 # view test
 shared_examples_for 'signup-form have right css' do
   it { expect(page).to have_css('label', text: 'ユーザーネーム') }
