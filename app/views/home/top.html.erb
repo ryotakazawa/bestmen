@@ -1,17 +1,15 @@
 <div class="ramen-background">
-  <div class="container" style=" padding-bottom: 50px;">
+  <div class="container" style=" padding-bottom: 30px;">
     <div class="center">
-      <h1>１番じゃなきゃあ</br>ダメなんです!!</h1>
-    
+      <h1 class="d-none d-lg-block">１番じゃなきゃあ</br>ダメなんです!!</h1>
+      <h1 class="d-{display} d-lg-none">一番</br>限定</h1>
       <h2>
-        </br>
-        ありとあらゆるラーメン情報が<br class="d-inline d-sm-none" />溢れかえる昨今。。。</br></br>
-        本当に価値のある一杯は、<br class="d-inline d-sm-none" />一体どこにあるのか。<br class="d-inline d-sm-none" />非常に見えづらい世の中です。</br></br>
-        BESTMENでは、<br class="d-inline d-sm-none" />あなたが認める一番のお店を、<br class="d-inline d-sm-none" />ジャンルごとに一店舗づつのみ<br class="d-inline d-sm-none" />登録できます。</br></br>
-        つまりここに掲載されているのは、<br class="d-inline d-sm-none" />全て誰かのナンバーワン！<br class="d-inline d-sm-none" />ということ！</br></br>
-        みんなで１番だけをシェアして、<br class="d-inline d-sm-none" />最高のラーメンライフを送りましょう！
+        ありとあらゆるラーメン情報が<br class="d-inline d-sm-none" />溢れかえる昨今。。。</br>
+        本当に価値のある一杯は、<br class="d-inline d-sm-none" />一体どこにあるのか。<br class="d-inline d-sm-none" />非常に見えづらい世の中です。</br>
+        BESTMENでは、<br class="d-inline d-sm-none" />あなたが認める<span class="strong">1番のお店</span>を</br>ジャンルごとに<span class="strong">1店づつのみ</span><br class="d-inline d-sm-none" />登録できます。</br>
+        つまりここに掲載されているのは、<br class="d-inline d-sm-none" /><span class="strong2">全て誰かのナンバーワン!!</span><br class="d-inline d-sm-none" />ということ！</br>
+        みんなで1番だけをシェアして、<br class="d-inline d-sm-none" />最高のラーメンライフを送りましょう！
       </h2>
-      
       <% if !current_user %>
         <%= link_to "早速はじめる", new_user_registration_path, class: "btn btn-lg btn-primary jelly" %>
       <% end %>
