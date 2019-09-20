@@ -65,8 +65,6 @@ class PicsController < ApplicationController
     render :like if @pic.unliked_by current_user
   end
 
-  def insta; end
-
   private
 
   def pic_params
