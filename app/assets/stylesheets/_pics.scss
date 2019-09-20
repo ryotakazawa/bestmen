@@ -89,6 +89,63 @@
   margin-bottom: 30px;
 }
 
+#sosyal {
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+.share-btn{
+  width: 70px;
+  display: inline-block;
+  position: relative;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  
+}
+.twitter {
+  background-color: #008DDE;
+  box-shadow: 0 4px 0 #0078BD;
+}
+.twitter:active {
+  top: 2px;
+  box-shadow: 0 2px 0 #0078BD;
+}
+.twitter:hover {
+  background-color: #1397D8;
+}
+.facebook {
+  background-color: #2e4a88;
+  box-shadow: 0 4px 0 #1B3D82;
+  text-shadow: 0 -1px -1px #1B3D82;
+}
+.facebook:hover {
+  background-color: #354F84;
+}
+.facebook:active {
+  top: 2px;
+  box-shadow: 0 2px 0 #1B3D82;
+}
+.line {
+  background-color: #35de00;
+  box-shadow: 0 4px 0 #2dc715;
+}
+.line:active {
+  top: 2px;
+  box-shadow: 0 2px 0 #2dc715;
+}
+.line:hover {
+  background-color: #35de00ed;
+}
+#sosyal > p {
+  margin: 0;
+  font-size: 13px;
+  color: grey;
+}
+
 //new.html.erb
 .ramen-new-form{
   padding: 20px;

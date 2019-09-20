@@ -11,4 +11,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name image profile])
     devise_parameter_sanitizer.permit(:account_update, keys: %i[name image profile])
   end
+  
 end
