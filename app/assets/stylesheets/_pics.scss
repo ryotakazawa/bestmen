@@ -61,8 +61,11 @@
 }
 
 //show.html.erb
-.ramen-pic{
+.ramen-pic-show{
   padding-bottom: 5px;
+  img{
+    border-radius: 10%;
+  }
 }
 
 .ramen-title-show{
@@ -92,6 +95,11 @@
 #sosyal {
     margin: 0 auto;
     margin-top: 15px;
+    p {
+      margin: 0;
+      font-size: 13px;
+      color: grey;
+    }
   }
 .share-btn{
   width: 70px;
@@ -140,11 +148,7 @@
 .line:hover {
   background-color: #35de00ed;
 }
-#sosyal > p {
-  margin: 0;
-  font-size: 13px;
-  color: grey;
-}
+
 
 //new.html.erb
 .ramen-new-form{

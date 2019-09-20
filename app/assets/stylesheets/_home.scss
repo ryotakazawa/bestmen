@@ -13,11 +13,24 @@
     h1{
        font-family: 'kssweetheavycalligraphy';
        color: $ramen-red;
-       font-size: 80px;
-       line-height: 100px;
+       font-size: 6.3rem;
+       line-height: 1.5;
+       
     }
     h2{
        font-family: 'rounded-l-mgenplus-2c-bold';
-       color: $ramen-red;
+       font-size: 1.2rem;
+       line-height: 1.7;
     }
+}
+
+.strong{
+    font-size: 1.5em;
+    color: $ramen-red;
+}
+
+.strong2{
+    font-size: 1.5em;
+    color: $ramen-red;
+    border-bottom: double 0.3rem $ramen-red;
 }
