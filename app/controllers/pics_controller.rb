@@ -3,17 +3,18 @@
 class PicsController < ApplicationController
   before_action :find_pic, only: %i[show edit update destroy like unlike]
   before_action :authenticate_user!, except: %i[index show]
-  before_action :lastpath, only: %i[destroy upvote]
+  before_action :lastpath, only: %i[destroy]
 
   def index
     @search = Pic.ransack(params[:q])
-
+    
+    @pics_per_page = 9
     @pics = if params[:q]
-              @search.result.page(params[:page]).per(9)
+              @search.result.page(params[:page]).per(@pics_per_page)
             elsif params[:tag_name]
-              Pic.tagged_with(params[:tag_name]).page(params[:page]).per(9)
+              Pic.tagged_with(params[:tag_name]).page(params[:page]).per(@pics_per_page)
             else
-              Pic.all.order('created_at DESC').page(params[:page]).per(9)
+              Pic.all.order('created_at DESC').page(params[:page]).per(@pics_per_page)
             end
   end
 
@@ -75,7 +76,7 @@ class PicsController < ApplicationController
   def find_pic
     @pic = Pic.find_by(id: params[:id])
   end
-
+  
   def lastpath
     @lastpath = Rails.application.routes.recognize_path(request.referer)
   end
