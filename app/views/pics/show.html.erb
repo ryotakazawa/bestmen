@@ -37,20 +37,20 @@
   <div class="container" style="padding-top: 30px">
     <!-- 以下タブの表示設定 -->
     <ul id="myTabs" class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="#home"  aria-controls="home" role="tab" data-toggle="tab" class="nav-link active">認定理由</a>
+      <li role="presentation" class="active"><a href="#description"  aria-controls="description" role="tab" data-toggle="tab" class="nav-link active">認定理由</a>
       </li>
-      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" class="nav-link">地図</a></li>
-      <li role="presentation"><a href="#message" aria-controls="message" role="tab" data-toggle="tab" class="nav-link">コメント</a></li>
+      <li role="presentation"><a href="#map-show" aria-controls="map-show" role="tab" data-toggle="tab" class="nav-link">地図</a></li>
+      <li role="presentation"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab" class="nav-link">コメント</a></li>
     </ul>
     <!-- Tab panes(以下、タブを押したときに表示する中身) -->
     <div class="tab-content p-2 ">
-      <div role="tabpanel" class="tab-pane active fade show ramen-desc-show lightgrey-background" id="home">
+      <div role="tabpanel" class="tab-pane active fade show ramen-desc-show lightgrey-background" id="description">
         <p><%= @pic.description %></p>
       </div>
-      <div role="tabpanel" class="tab-pane fade" id="profile">
+      <div role="tabpanel" class="tab-pane fade" id="map-show">
         <div id="map" style='height: 300px;'></div>
       </div>
-      <div role="tabpanel" class="tab-pane fade" id="message">
+      <div role="tabpanel" class="tab-pane fade" id="comments">
         <div id="comments_area" class="commentList"><!-- #① -->
           <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
           <%= render partial: 'comments/index', locals: { comments: @comments, pic: @pic } %>
