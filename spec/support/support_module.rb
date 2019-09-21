@@ -79,7 +79,7 @@ module SupportModule
     end
   end
   
-  #pic
+  #pic_new
   def fill_in_pic_new_form(pic, option = { invalid: false })
     if option[:taglistblank]
       params = attributes_for(pic)
@@ -101,6 +101,32 @@ module SupportModule
       fill_in '住所',                with: params[:address]
       select  '醤油',                from: 'ジャンル'
       fill_in '認定理由',            with: params[:description]
+    end
+  end
+  
+  #pic_edit
+  def fill_in_pic_edit_form(pic, option = { invalid: false })
+    if option[:taglistblank]
+      params = attributes_for(pic)
+      fill_in '店名',                with: params[:title]
+      attach_file('pic_image', "spec/fixtures/test.jpg")
+      fill_in '住所',                with: params[:address]
+      select  '',                from: 'ジャンル'
+      fill_in '認定理由',            with: params[:description]
+    elsif option[:nameblank]
+      params = attributes_for(pic) 
+      fill_in '店名',                with: ''
+      attach_file('pic_image', "spec/fixtures/test.jpg")
+      fill_in '住所',                with: params[:address]
+      select  '醤油',                from: 'ジャンル'
+      fill_in '認定理由',            with: params[:description]
+    else
+      params = attributes_for(pic)
+      fill_in '店名',                with: params[:title]
+      attach_file('pic_image', "spec/fixtures/test.jpg")
+      fill_in '住所',                with: params[:address]
+      select  '醤油',                from: 'ジャンル'
+      fill_in '認定理由',            with: '最高！！'
     end
   end
   
