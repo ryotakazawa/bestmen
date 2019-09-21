@@ -19,16 +19,17 @@ end
 # picss#create
 # success
 shared_examples_for 'success create pic' do
-  scenario 'pic increment 1' do
+  scenario 'pic increment 1 and show correct veiw' do
     expect do
       fill_in_pic_new_form(:pic)
       click_button '登録する'
     end.to change(Pic, :count).by(1)
-    # メッセージ
-    # expect(page).to have_css('div.alert.alert-success', text: 'Welcome to the BESTONE!')
-    # ユーザープロフィールへredirect
     expect(page).to have_current_path(pic_path(Pic.last))
     expect(current_path).to eq pic_path(Pic.last)
+    #view
+    expect(page).to have_css('h1', text: 'MyString')
+    expect(page).to have_css('a', text: 'testuser1')
+    expect(page).to have_content('港区芝公園４丁目２−８')
   end
 end
 # failed
