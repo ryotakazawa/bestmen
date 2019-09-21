@@ -9,7 +9,7 @@ gem 'bootstrap'
 gem 'bootstrap-social-rails'
 gem 'cancancan'
 gem 'coffee-rails', '4.2.2'
-gem 'devise'
+gem 'devise', '>= 4.7.1'
 gem 'devise-i18n' # devise日本語化
 gem 'dotenv-rails'
 gem 'font-awesome-sass', '~> 5.8.1'
