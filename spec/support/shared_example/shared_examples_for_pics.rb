@@ -102,6 +102,7 @@ shared_examples_for 'fail edit pic tag_list blank' do
   end
 end
 
+
 # pics#delete
 shared_examples_for 'success delete pic' do
   scenario 'pic decrement 1 and show correct veiw' do
