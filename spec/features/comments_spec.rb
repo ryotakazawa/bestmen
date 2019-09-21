@@ -4,19 +4,16 @@ require 'rails_helper'
 
 RSpec.feature 'Comments', type: :feature do
   include SupportModule
-  let(:user) { create(:user) }
+  include_context "setup"
 
   describe 'CreateComment' do
-    before { visit '/users/' }
-    it_behaves_like 'signup-form have right css'
-
-    context 'valid info' do
-      it_behaves_like 'success create user'
+    
+    before do
+      login_as(user)
+      visit pic_path(pic)
     end
-
-    context 'invalid info' do
-      # 失敗 (increment: 0)
-      it_behaves_like 'fail create user'
-    end
+    
+    it_behaves_like 'comment-form have right css'
+    
   end
 end
