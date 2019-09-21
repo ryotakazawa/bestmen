@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
 module SupportModule
+  
+  #共通
+  def login_as(user)
+    visit new_user_session_path
+    fill_in 'メールアドレス',        with: user.email
+    fill_in 'パスワード',            with: user.password
+    click_button "ログイン"
+  end
+  
+  #user
   def fill_in_signup_form(user, option = { invalid: false })
     if option[:allblank]
       fill_in 'ユーザーネーム',                                           with: ''
@@ -45,30 +55,6 @@ module SupportModule
       fill_in 'パスワード確認(再度パスワードを入力してください)',         with: params[:password]
     end
   end
-
-  def fill_in_pic_new_form(pic, option = { invalid: false })
-    if option[:taglistblank]
-      params = attributes_for(pic)
-      fill_in '店名',                with: params[:title]
-      attach_file('pic_image', "spec/fixtures/test.jpg")
-      fill_in '住所',                with: params[:address]
-      fill_in '認定理由',            with: params[:description]
-    elsif option[:nameblank]
-      params = attributes_for(pic) 
-      fill_in '店名',                with: ''
-      attach_file('pic_image', "spec/fixtures/test.jpg")
-      fill_in '住所',                with: params[:address]
-      select  '醤油',                from: 'ジャンル'
-      fill_in '認定理由',            with: params[:description]
-    else
-      params = attributes_for(pic)
-      fill_in '店名',                with: params[:title]
-      attach_file('pic_image', "spec/fixtures/test.jpg")
-      fill_in '住所',                with: params[:address]
-      select  '醤油',                from: 'ジャンル'
-      fill_in '認定理由',            with: params[:description]
-    end
-  end
   
   def fill_in_login_form(user, option = { invalid: false })
     if option[:allblank]
@@ -93,10 +79,39 @@ module SupportModule
     end
   end
   
-  def login_as(user)
-    visit new_user_session_path
-    fill_in 'メールアドレス',        with: user.email
-    fill_in 'パスワード',            with: user.password
-    click_button "ログイン"
+  #pic
+  def fill_in_pic_new_form(pic, option = { invalid: false })
+    if option[:taglistblank]
+      params = attributes_for(pic)
+      fill_in '店名',                with: params[:title]
+      attach_file('pic_image', "spec/fixtures/test.jpg")
+      fill_in '住所',                with: params[:address]
+      fill_in '認定理由',            with: params[:description]
+    elsif option[:nameblank]
+      params = attributes_for(pic) 
+      fill_in '店名',                with: ''
+      attach_file('pic_image', "spec/fixtures/test.jpg")
+      fill_in '住所',                with: params[:address]
+      select  '醤油',                from: 'ジャンル'
+      fill_in '認定理由',            with: params[:description]
+    else
+      params = attributes_for(pic)
+      fill_in '店名',                with: params[:title]
+      attach_file('pic_image', "spec/fixtures/test.jpg")
+      fill_in '住所',                with: params[:address]
+      select  '醤油',                from: 'ジャンル'
+      fill_in '認定理由',            with: params[:description]
+    end
+  end
+  
+  #comment
+  def fill_in_comment_create_form(comment, option = { invalid: false })
+    if option[:contentblank]
+      params = attributes_for(comment)
+      fill_in 'コメントする',                with: ''
+    else
+      params = attributes_for(comment)
+      fill_in 'コメントする',                with: params[:content]
+    end
   end
 end

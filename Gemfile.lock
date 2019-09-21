@@ -434,7 +434,7 @@ DEPENDENCIES
   paperclip
   pg (= 0.20.0)
   puma (= 3.9.1)
-  rails (= 5.1.6)
+  rails
   rails-erd
   rails_12factor
   rails_admin
