@@ -32,18 +32,18 @@ gem 'turbolinks',   '5.0.1'
 gem 'uglifier',     '3.2.0'
 
 group :development, :test do
+  gem 'bullet'
   gem 'byebug', '9.0.6', platform: :mri
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'guard'
   gem 'guard-rspec'
+  gem 'omniauth-rails_csrf_protection'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'spring-commands-rspec'
-  gem 'webdrivers'
-  gem 'bullet'
-  gem 'omniauth-rails_csrf_protection'
   gem 'sqlite3', '1.3.13'
+  gem 'webdrivers'
 end
 
 group :development do
