@@ -7,7 +7,7 @@ class PicsController < ApplicationController
 
   def index
     @search = Pic.ransack(params[:q])
-    
+
     @pics_per_page = 9
     @pics = if params[:q]
               @search.result.page(params[:page]).per(@pics_per_page)
@@ -74,7 +74,7 @@ class PicsController < ApplicationController
   def find_pic
     @pic = Pic.find_by(id: params[:id])
   end
-  
+
   def lastpath
     @lastpath = Rails.application.routes.recognize_path(request.referer)
   end

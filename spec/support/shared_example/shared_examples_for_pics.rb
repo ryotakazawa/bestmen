@@ -25,7 +25,7 @@ shared_examples_for 'success create pic' do
     end.to change(Pic, :count).by(1)
     expect(page).to have_current_path(pic_path(Pic.last))
     expect(current_path).to eq pic_path(Pic.last)
-    #view
+    # view
     expect(page).to have_css('h1', text: 'MyString')
     expect(page).to have_css('a', text: 'testuser1')
     expect(page).to have_content('港区芝公園４丁目２−８')
@@ -77,7 +77,7 @@ shared_examples_for 'success edit pic' do
     click_button '更新する'
     expect(page).to have_current_path(pic_path(pic))
     expect(current_path).to eq pic_path(pic)
-    #view
+    # view
     expect(page).to have_css('h1', text: 'MyString')
     expect(page).to have_css('a', text: 'testuser1')
     expect(page).to have_content('最高！！')
@@ -102,14 +102,13 @@ shared_examples_for 'fail edit pic tag_list blank' do
   end
 end
 
-
 # pics#delete
 shared_examples_for 'success delete pic' do
   scenario 'pic decrement 1 and show correct veiw' do
     click_link '削除'
-    page.accept_confirm "一度削除した投稿は復元できません。よろしいですか？"
+    page.accept_confirm '一度削除した投稿は復元できません。よろしいですか？'
     expect(page).to have_current_path(pics_path)
-    #view
+    # view
     expect(page).to have_css('h1', text: '名店一覧')
   end
 end

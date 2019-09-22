@@ -43,7 +43,7 @@ shared_examples_for 'fail create user all blank' do
     expect(page).to have_css('h1', text: '新規登録')
   end
 end
-#nameblank
+# nameblank
 shared_examples_for 'fail create user name blank' do
   scenario 'user increment 0' do
     expect do
@@ -119,7 +119,6 @@ shared_examples_for 'fail create user unmatch password' do
     expect(page).to have_css('h1', text: '新規登録')
   end
 end
-
 
 # user
 # sessions#new
