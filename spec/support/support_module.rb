@@ -10,6 +10,7 @@ module SupportModule
   end
 
   # user
+  # sign_up
   def fill_in_signup_form(user, option = { invalid: false })
     if option[:allblank]
       fill_in 'ユーザーネーム',                                           with: ''
@@ -55,6 +56,7 @@ module SupportModule
     end
   end
 
+  # login
   def fill_in_login_form(user, option = { invalid: false })
     if option[:allblank]
       fill_in 'メールアドレス', with: ''
