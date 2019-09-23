@@ -4,6 +4,7 @@ class PicsController < ApplicationController
   before_action :find_pic, only: %i[show edit update destroy like unlike]
   before_action :authenticate_user!, except: %i[index show]
   before_action :lastpath, only: %i[destroy]
+  before_action :correct_user, only: %i[edit update destroy]
 
   def index
     @search = Pic.ransack(params[:q])
@@ -32,7 +33,7 @@ class PicsController < ApplicationController
     @pic = current_user.pics.build(pic_params)
 
     if @pic.save
-      redirect_to @pic, notice: '投稿されました!'
+      redirect_to @pic, notice: '投稿されました'
     else
       render 'new'
     end
@@ -42,7 +43,7 @@ class PicsController < ApplicationController
 
   def update
     if @pic.update(pic_params)
-      redirect_to @pic, notice: 'Pic was updated'
+      redirect_to @pic, notice: '投稿が編集されました'
     else
       render 'edit'
     end
@@ -73,6 +74,12 @@ class PicsController < ApplicationController
 
   def find_pic
     @pic = Pic.find_by(id: params[:id])
+  end
+
+  def correct_user
+    @pic = current_user.pics.find_by(id: params[:id])
+    redirect_back(fallback_location: root_path) if @pic.nil?
+    flash[:alert] = '権限がありません'
   end
 
   def lastpath
