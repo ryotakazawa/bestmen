@@ -33,7 +33,7 @@ class PicsController < ApplicationController
     @pic = current_user.pics.build(pic_params)
 
     if @pic.save
-      redirect_to @pic, notice: '投稿されました!'
+      redirect_to @pic, notice: '投稿されました'
     else
       render 'new'
     end
