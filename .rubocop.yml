@@ -40,6 +40,12 @@ Style/GuardClause:
   Exclude:
     - 'app/models/ability.rb'
 
+# ガードファイルのデフォルト設定のため除外
+Style/MultilineTernaryOperator:
+  Exclude:
+    - 'Guardfile'
+
+
 # 日本語でのコメントを許可
 AsciiComments:
   Enabled: false
