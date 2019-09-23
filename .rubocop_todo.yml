@@ -32,8 +32,3 @@ Metrics/PerceivedComplexity:
 Style/IdenticalConditionalBranches:
   Exclude:
     - 'spec/support/support_module.rb'
-
-# Offense count: 2
-Style/MultilineTernaryOperator:
-  Exclude:
-    - 'Guardfile'

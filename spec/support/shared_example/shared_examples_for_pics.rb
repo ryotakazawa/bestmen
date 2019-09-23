@@ -103,8 +103,19 @@ shared_examples_for 'fail edit pic tag_list blank' do
 end
 
 # pics#delete
+# success
 shared_examples_for 'success delete pic' do
-  scenario 'pic decrement 1 and show correct veiw' do
+  scenario 'success delete pic and show correct veiw' do
+    click_link '削除'
+    page.accept_confirm '一度削除した投稿は復元できません。よろしいですか？'
+    expect(page).to have_current_path(pics_path)
+    # view
+    expect(page).to have_css('h1', text: '名店一覧')
+  end
+end
+# fail
+shared_examples_for 'fail delete pic' do
+  scenario 'pic delete fail and show correct veiw' do
     click_link '削除'
     page.accept_confirm '一度削除した投稿は復元できません。よろしいですか？'
     expect(page).to have_current_path(pics_path)
