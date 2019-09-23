@@ -10,6 +10,7 @@ module SupportModule
   end
 
   # user
+  # sign_up
   def fill_in_signup_form(user, option = { invalid: false })
     if option[:allblank]
       fill_in 'ユーザーネーム',                                           with: ''
@@ -23,31 +24,31 @@ module SupportModule
       fill_in 'パスワード', with: params[:password]
       fill_in 'パスワード確認(再度パスワードを入力してください)', with: params[:password]
     elsif option[:emailblank]
-      params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
+      params = attributes_for(user)
       fill_in 'ユーザーネーム',                                           with: params[:name]
       fill_in 'メールアドレス',                                           with: ''
       fill_in 'パスワード', with: params[:password]
       fill_in 'パスワード確認(再度パスワードを入力してください)', with: params[:password]
     elsif option[:passwordblank]
-      params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
+      params = attributes_for(user)
       fill_in 'ユーザーネーム',                                           with: params[:name]
       fill_in 'メールアドレス',                                           with: params[:email]
       fill_in 'パスワード', with: ''
       fill_in 'パスワード確認(再度パスワードを入力してください)', with: params[:password]
     elsif option[:passwordconfirmationblank]
-      params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
+      params = attributes_for(user)
       fill_in 'ユーザーネーム',                                           with: params[:name]
       fill_in 'メールアドレス',                                           with: params[:email]
       fill_in 'パスワード', with: params[:password]
       fill_in 'パスワード確認(再度パスワードを入力してください)', with: params[:password]
     elsif option[:unmatchpassword]
-      params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
+      params = attributes_for(user)
       fill_in 'ユーザーネーム',                                           with: params[:name]
       fill_in 'メールアドレス',                                           with: params[:email]
       fill_in 'パスワード', with: params[:password]
       fill_in 'パスワード確認(再度パスワードを入力してください)', with: '123abc'
     else
-      params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
+      params = attributes_for(user)
       fill_in 'ユーザーネーム',                                           with: params[:name]
       fill_in 'メールアドレス',                                           with: params[:email]
       fill_in 'パスワード', with: params[:password]
@@ -55,6 +56,7 @@ module SupportModule
     end
   end
 
+  # login
   def fill_in_login_form(user, option = { invalid: false })
     if option[:allblank]
       fill_in 'メールアドレス', with: ''
@@ -72,7 +74,7 @@ module SupportModule
       fill_in 'メールアドレス', with: params[:email]
       fill_in 'パスワード', with: 'abcdef'
     else
-      params = attributes_for(user) # => ファクトリ使用、属性値をハッシュとして作成
+      params = attributes_for(user)
       fill_in 'メールアドレス', with: params[:email]
       fill_in 'パスワード', with: params[:password]
     end
@@ -90,15 +92,15 @@ module SupportModule
       params = attributes_for(pic)
       fill_in '店名', with: ''
       attach_file('pic_image', 'spec/fixtures/test.jpg')
-      fill_in '住所',                with: params[:address]
-      select  '醤油',                from: 'ジャンル'
+      fill_in '住所',       with: params[:address]
+      select  '醤油',       from: 'ジャンル'
       fill_in '認定理由', with: params[:description]
     else
       params = attributes_for(pic)
       fill_in '店名', with: params[:title]
       attach_file('pic_image', 'spec/fixtures/test.jpg')
-      fill_in '住所',                with: params[:address]
-      select  '醤油',                from: 'ジャンル'
+      fill_in '住所',       with: params[:address]
+      select  '醤油',       from: 'ジャンル'
       fill_in '認定理由', with: params[:description]
     end
   end
@@ -110,22 +112,22 @@ module SupportModule
       fill_in '店名', with: params[:title]
       attach_file('pic_image', 'spec/fixtures/test.jpg')
       fill_in '住所', with: params[:address]
-      select  '',                from: 'ジャンル'
-      fill_in '認定理由',            with: params[:description]
+      select  '', from: 'ジャンル'
+      fill_in '認定理由', with: params[:description]
     elsif option[:nameblank]
       params = attributes_for(pic)
       fill_in '店名', with: ''
       attach_file('pic_image', 'spec/fixtures/test.jpg')
-      fill_in '住所',                with: params[:address]
-      select  '醤油',                from: 'ジャンル'
+      fill_in '住所',       with: params[:address]
+      select  '醤油',       from: 'ジャンル'
       fill_in '認定理由', with: params[:description]
     else
       params = attributes_for(pic)
       fill_in '店名', with: params[:title]
       attach_file('pic_image', 'spec/fixtures/test.jpg')
-      fill_in '住所',                with: params[:address]
-      select  '醤油',                from: 'ジャンル'
-      fill_in '認定理由', with: '最高！！'
+      fill_in '住所',       with: params[:address]
+      select  '醤油',       from: 'ジャンル'
+      fill_in '認定理由',   with: '最高！！'
     end
   end
 
