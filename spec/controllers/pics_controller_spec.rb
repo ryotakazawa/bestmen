@@ -18,7 +18,6 @@ RSpec.describe PicsController, type: :controller do
     end
 
     it 'doesnt accept delete request from uncorrect user' do
-      pic = create(:pic, user_id: 2)
       expect do
         delete :destroy, params: { id: pic.id }
       end.to change(Pic, :count).by(0)
