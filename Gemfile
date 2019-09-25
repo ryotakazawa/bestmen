@@ -61,8 +61,9 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.20.0'
+  gem 'pg'
   gem 'rails_12factor' # RailsアプリケーションをHerokuで動作をさせることを目的としているGem
+
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります

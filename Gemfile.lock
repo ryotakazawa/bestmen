@@ -432,7 +432,7 @@ DEPENDENCIES
   omniauth-rails_csrf_protection
   omniauth-twitter
   paperclip
-  pg (= 0.20.0)
+  pg
   puma (= 3.9.1)
   rails
   rails-erd
