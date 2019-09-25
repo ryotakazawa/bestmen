@@ -63,6 +63,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor' # RailsアプリケーションをHerokuで動作をさせることを目的としているGem
+  gem 'mini_racer', platforms: :ruby
 
 end
 
