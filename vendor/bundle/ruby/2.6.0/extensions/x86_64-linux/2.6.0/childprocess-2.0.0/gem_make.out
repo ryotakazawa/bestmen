@@ -1,0 +1,5 @@
+current directory: /home/ec2-user/environment/bestone/vendor/bundle/ruby/2.6.0/gems/childprocess-2.0.0/ext
+/home/ec2-user/.rvm/rubies/ruby-2.6.3/bin/ruby mkrf_conf.rb
+
+current directory: /home/ec2-user/environment/bestone/vendor/bundle/ruby/2.6.0/gems/childprocess-2.0.0/ext
+/home/ec2-user/.rvm/rubies/ruby-2.6.3/bin/ruby -rrubygems /home/ec2-user/environment/bestone/vendor/bundle/ruby/2.6.0/gems/rake-12.3.3/exe/rake RUBYARCHDIR\=/home/ec2-user/environment/bestone/vendor/bundle/ruby/2.6.0/extensions/x86_64-linux/2.6.0/childprocess-2.0.0 RUBYLIBDIR\=/home/ec2-user/environment/bestone/vendor/bundle/ruby/2.6.0/extensions/x86_64-linux/2.6.0/childprocess-2.0.0
