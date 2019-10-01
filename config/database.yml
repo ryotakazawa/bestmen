@@ -28,3 +28,4 @@ production:
   password: <%= ENV['RDS_PASSWORD'] %>
   host: <%= ENV['RDS_HOSTNAME'] %>
   port: <%= ENV['RDS_PORT'] %>
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
