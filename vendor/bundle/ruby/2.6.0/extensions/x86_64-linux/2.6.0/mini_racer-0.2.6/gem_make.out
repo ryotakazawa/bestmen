@@ -1,0 +1,35 @@
+current directory: /home/ec2-user/environment/bestone/vendor/bundle/ruby/2.6.0/gems/mini_racer-0.2.6/ext/mini_racer_extension
+/home/ec2-user/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191001-8554-m29ae5.rb extconf.rb
+checking for -lpthread... yes
+creating Makefile
+
+current directory: /home/ec2-user/environment/bestone/vendor/bundle/ruby/2.6.0/gems/mini_racer-0.2.6/ext/mini_racer_extension
+make "DESTDIR=" clean
+
+current directory: /home/ec2-user/environment/bestone/vendor/bundle/ruby/2.6.0/gems/mini_racer-0.2.6/ext/mini_racer_extension
+make "DESTDIR="
+compiling mini_racer_extension.cc
+cc1plus: warning: command line option ‘-Wimplicit-int’ is valid for C/ObjC but not for C++ [enabled by default]
+In file included from /home/ec2-user/.rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/ruby/ruby.h:29:0,
+                 from /home/ec2-user/.rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/ruby.h:33,
+                 from mini_racer_extension.cc:2:
+/home/ec2-user/.rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/ruby/defines.h:388:44: warning: invalid suffix on literal; C++11 requires a space between literal and identifier [-Wliteral-suffix]
+ #   define EXTERN __pragma(message(__FILE__"("STRINGIZE(__LINE__)"): warning: "\
+                                            ^
+In file included from /home/ec2-user/.rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/ruby/intern.h:24:0,
+                 from /home/ec2-user/.rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/ruby/ruby.h:2111,
+                 from /home/ec2-user/.rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/ruby.h:33,
+                 from mini_racer_extension.cc:2:
+/home/ec2-user/.rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/ruby/defines.h:388:44: warning: invalid suffix on literal; C++11 requires a space between literal and identifier [-Wliteral-suffix]
+ #   define EXTERN __pragma(message(__FILE__"("STRINGIZE(__LINE__)"): warning: "\
+                                            ^
+cc1plus: warning: unrecognized command line option "-Wno-tautological-compare" [enabled by default]
+cc1plus: warning: unrecognized command line option "-Wno-self-assign" [enabled by default]
+cc1plus: warning: unrecognized command line option "-Wno-parentheses-equality" [enabled by default]
+cc1plus: warning: unrecognized command line option "-Wno-constant-logical-operand" [enabled by default]
+cc1plus: warning: unrecognized command line option "-Wno-cast-function-type" [enabled by default]
+linking shared-object mini_racer_extension.so
+
+current directory: /home/ec2-user/environment/bestone/vendor/bundle/ruby/2.6.0/gems/mini_racer-0.2.6/ext/mini_racer_extension
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 mini_racer_extension.so ./.gem.20191001-8554-3lcjmg
