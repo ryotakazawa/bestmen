@@ -292,7 +292,7 @@ Devise.setup do |config|
   # end
   
   #elastic beanstalkデプロイ用にキーを追加
-  config.secret_key = 'db6322718e0a891bae8ac5ad13906acbe7c361b43b0d4d0ef1f5447d3a1e3d3a6d5fd885b447b6626735afb6d88a8ffeee7a188de266910060cb76ebfea2b373'
+  #config.secret_key = 'db6322718e0a891bae8ac5ad13906acbe7c361b43b0d4d0ef1f5447d3a1e3d3a6d5fd885b447b6626735afb6d88a8ffeee7a188de266910060cb76ebfea2b373'
 
   # ==> Configuration for :registerable
 
