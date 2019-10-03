@@ -48,7 +48,7 @@
           `<a href="http://thebestmen.net/pics/${picId}">${marker[i].title}</a>` +
           `(${markerData[i].tag_list})` +
           '</br>' +
-          `<img src="/system/pics/images/000/000/0${picId}/thumb/${picFileName}" />` +
+          `<%= image_tag(${markerData[i].image.url(:medium)})%>` +
           '</br>' +
           `<a href="https://maps.google.co.jp/maps?q=loc:${marker[i].position}&iwloc=J" target="_blank">Google mapで見る</a>` +
           '</div>'
