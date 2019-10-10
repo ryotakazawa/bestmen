@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gem 'acts-as-taggable-on'
 gem 'acts_as_votable'
+gem 'aws-sdk', '~> 3'
 gem 'bcrypt'
 gem 'bootstrap'
 gem 'bootstrap-social-rails'
