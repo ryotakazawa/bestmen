@@ -14,7 +14,7 @@ class Pic < ApplicationRecord
   validates :tag_list, presence: true
 
   has_attached_file :image,
-                      :path => ":attachment/:id/:style.:extension",
+                      :path => ":attachment/pic/:id/:style.:extension",
                       styles: { medium: '300x300>', thumb: '200x200>' },
                       default_url: '/system/pics/images/no_image_300.png'
   validates_attachment_content_type :image, content_type: %r{\Aimage/.*\z}
