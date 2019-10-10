@@ -10,7 +10,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
   validates :name, presence: true
   has_attached_file :image,
-                      :path => ":attachment/ramen/:id/:style.:extension",
+                      :path => ":attachment/user/:id/:style.:extension",
                       styles: { medium: '300x300>', thumb: '200x200>' },
                       default_url: '/system/pics/images/no_image_300.png'
   validates_attachment_content_type :image, content_type: %r{\Aimage/.*\z}
