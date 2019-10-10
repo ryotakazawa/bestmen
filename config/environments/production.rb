@@ -81,6 +81,19 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+  
+  # s3の設定
+
+  config.paperclip_defaults = {
+    :storage        => :s3,
+    :bucket         => ENV['S3_BUCKET_NAME'],
+    :s3_region      => ENV['AWS_REGION'],
+    :s3_host_name   => 's3-ap-northeast-1.amazonaws.com',
+    :s3_credentials => {
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
