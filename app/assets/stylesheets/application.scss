@@ -23,7 +23,6 @@
 @import "maps";
 @import "pics";
 @import "users";
-@import "users_signin_and_login";
 
 
 /* mixins, variables, etc. */
@@ -45,15 +44,6 @@
 }
 
 /* universal */
-.ramen-background{
-    background-image: image-url("background.jpg");
-    background-size: cover;
-}
-.ramen-background2{
-    background-image: image-url("background2.png");
-    background-size: cover;
-}
-
 
 section {
   overflow: auto;
