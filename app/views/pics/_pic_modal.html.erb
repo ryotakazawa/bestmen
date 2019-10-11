@@ -1,3 +1,15 @@
+<!--
+実装完了済。indexの画像をタップすると諸情報が載ったモーダルが表示されるというもの。
+必要ない気もするので、一時的に無効化中。
+有効にする場合はこのファイルのコメントを外した後
+pic/_index.html.erb内の
+<%= image_tag(pic.image.url(:medium), size: '300x300'), pic %>
+を
+<%= link_to image_tag(pic.image.url(:medium), size: '300x300'), pic, remote: true %>
+に変更する。
+-->
+
+<!--
 <div class="container">
   <div class="modal-dialog modal-dialog-centered ">
     <div class="modal-content">
@@ -16,3 +28,4 @@
     </div>
   </div>
 </div>
+-->
