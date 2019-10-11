@@ -3,13 +3,16 @@
       <div class="col-12 col-sm-6 col-lg-4">
         <div class="ramen-box">
           <div class="hover-parent d-block mx-auto">
-              <%= link_to image_tag(pic.image.url(:medium), size: '300x300'), pic, remote: true %>
-              <%= link_to pic, remote: true do %>
+              <%= link_to image_tag(pic.image.url(:medium), size: '300x300'), pic %>
+              <!-- 画像上のhover要素。不要な気がするので一時的にコメントアウト。 -->
+              <!--
+              %= link_to pic, remote: true do %
                 <div class="mask text-center">
-                  <div class="caption"><%= pic.title %></div>
-                  <%= pic.get_likes.size %>
+                  <div class="caption">%= pic.title %</div>
+                  %= pic.get_likes.size %
                 </div>
-              <% end %>
+              % end %
+              -->
           </div>
           <div class="ramen-info-index">
             <div class="ramen-like">
