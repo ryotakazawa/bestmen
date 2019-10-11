@@ -8,10 +8,10 @@
     <h1><%= @pic.title %></h1>
   </div>
   <div class="ramen-info-show grey-background">
-    認定者:<%= link_to @pic.user.name, user_path(@pic.user.id) %></br>
-    ジャンル:<%= link_to @pic.tag_list, pics_path(tag_name: @pic.tag_list) %></br>
-    所在地:<%= @pic.address %></br>
-    いいね:<%= render partial: 'pics/like', locals: { pic: @pic} %>
+    <span>認定者:</span><%= link_to @pic.user.name, user_path(@pic.user.id) %></br>
+    <span>ジャンル:</span><%= link_to @pic.tag_list, pics_path(tag_name: @pic.tag_list) %></br>
+    <span>所在地:</span><%= @pic.address %></br>
+    <span>いいね:</span><%= render partial: 'pics/like', locals: { pic: @pic} %>
   </div>
   <% if @pic.user == current_user %>
   <div>
