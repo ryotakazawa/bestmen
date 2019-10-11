@@ -2,10 +2,13 @@
 実装完了済。indexの画像をタップすると諸情報が載ったモーダルが表示されるというもの。
 要らない様な気がするので、一時的に無効化中。
 有効にする場合はこのファイルのコメントを外した後
-pic/_index.html.erb内の
-<%= link_to image_tag(pic.image.url(:medium), size: '300x300'), pic %>
+pics/_index.html.erb
+users/_posted_pics.html.erb
+users/_liked_pics.html.erb
+内の
+%= link_to image_tag(pic.image.url(:medium), size: '300x300'), pic %
 を
-<%= link_to image_tag(pic.image.url(:medium), size: '300x300'), pic, remote: true %>
+%= link_to image_tag(pic.image.url(:medium), size: '300x300'), pic, remote: true %
 に変更する。
 -->
 
@@ -19,11 +22,11 @@ pic/_index.html.erb内の
         </button>
       </div>
       <div class="d-block mx-auto">
-        <%= link_to image_tag(@pic.image.url(:medium)), @pic %>
-        <h1><%= @pic.title %></h1>
-        <%= link_to @pic.tag_list, pics_path(tag_name: @pic.tag_list) %>
-        <p><%= @pic.description %></p>
-        <%= render partial: 'pics/like', locals: { pic: @pic} %>
+        %= link_to image_tag(@pic.image.url(:medium)), @pic %
+        <h1>%= @pic.title %</h1>
+        %= link_to @pic.tag_list, pics_path(tag_name: @pic.tag_list) %
+        <p>%= @pic.description %</p>
+        %= render partial: 'pics/like', locals: { pic: @pic} %
       </div>
     </div>
   </div>
