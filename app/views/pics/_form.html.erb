@@ -16,7 +16,7 @@
   
   <%= f.label :image %>
   <%= f.file_field :image, as: :file, onchange: "previewFile()", input_html: { class: 'form-controll'} %>
-	<img src="" id="preview" height="200" > <!-- プレビューの表示枠を用意 -->
+	<img src="" id="preview" height="200" > <!-- プレビュー表示枠 -->
   
   
   <div class="form-label-group">
@@ -52,7 +52,6 @@
         //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
         // Bias the SearchBox results towards current map's viewport.
-        // サーチボックスのサイズを"地図の"ビューポートの境目によって規定。現在ボックスがマップ外に配置されているので無効
         map.addListener('bounds_changed', function() {
           searchBox.setBounds(map.getBounds());
         });
@@ -107,24 +106,21 @@
         });
       }
   function copyToClipboard() {
-          // コピー対象をJavaScript上で変数として定義する
           var copyTarget = document.getElementById("pac-input");
-          // コピー対象のテキストを選択する
           copyTarget.select();
-          // 選択しているテキストをクリップボードにコピーする
           document.execCommand("Copy");
       }
   function previewFile() {
-          var preview = document.querySelector('#preview');//どこでプレビューするか指定。'img[name="preview"]'などにすればimg複数あっても指定できます。
-          var file    = document.querySelector('input[type=file]').files[0];//'input[type=file]'で投稿されたファイル要素の0番目を参照します。input[type=file]にmutipleがなくてもこのコードになります。
+          var preview = document.querySelector('#preview');
+          var file    = document.querySelector('input[type=file]').files[0];
           var reader  = new FileReader();
         
           reader.addEventListener("load", function () {
-            preview.src = reader.result;//めちゃめちゃ長い文字列が引き渡されます。ユーザーのファイルパスに紐付かない画像情報だと思います。
+            preview.src = reader.result;
           }, false);
         
           if (file) {
-            reader.readAsDataURL(file);//ここでreaderのメソッドに引数としてfileを入れます。ここで、readerのaddEventListenerが発火します。
+            reader.readAsDataURL(file);
           }
         }
 </script>
