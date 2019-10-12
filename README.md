@@ -49,3 +49,6 @@ https://thebestmen.net/
   ・Places API
 * Twitter API
 * Facebook API
+<br>
+AWSアーキテクチャ図
+![トップ画像](aws_architecture.png)
