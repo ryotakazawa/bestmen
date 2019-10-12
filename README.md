@@ -1,5 +1,5 @@
 # BESTMEN -1番だけをシェアしよう-
-![トップ画像](bestmen_top.png)
+![bestmen_top](https://user-images.githubusercontent.com/32186329/66702470-ebba7280-ed42-11e9-9ea5-71962bbe4229.png)
 BESTMENは、ユーザーが認める１番のラーメン屋を、各ジャンル1店舗ずつのみ投稿し、シェア出来るアプリケーションです。
 他のグルメアプリケーションと異なり投稿できる店舗数が限られているので、ハイレベルなお店だけを探すことが出来ます。
 
@@ -51,7 +51,4 @@ https://thebestmen.net/
 * Facebook API
 <br>
 AWSアーキテクチャ図<br>
-![AWSアーキテクチャ図](aws_architecture.png)
-
-![bestmen_top](https://user-images.githubusercontent.com/32186329/66702470-ebba7280-ed42-11e9-9ea5-71962bbe4229.png)
 ![aws_architecture](https://user-images.githubusercontent.com/32186329/66702473-f70d9e00-ed42-11e9-96c8-73a16fa1dc45.png)
