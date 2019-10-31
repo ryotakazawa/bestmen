@@ -14,6 +14,7 @@ class User < ApplicationRecord
                       styles: { medium: '300x300>', thumb: '200x200>' },
                       default_url: '/system/pics/images/no_image_300.png'
   validates_attachment_content_type :image, content_type: %r{\Aimage/.*\z}
+  before_destroy :validate_testuser
 
   protected
 
@@ -33,4 +34,10 @@ class User < ApplicationRecord
   def self.dumy_email(auth)
     "#{auth.uid}-#{auth.provider}@example.com" # POINT
   end
+  
+  def validate_testuser
+    throw(:abort) if self.email == "test@bestmen.com"
+  end
+  
+  
 end
