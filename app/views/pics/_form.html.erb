@@ -23,7 +23,8 @@
     <%= f.input :address, input_html: { class: 'form-controll'} %>
   </div>
   
-  <input id= "pac-input", class= "controls", type= "text", placeholder= "店名を入力し合致する予想変換をセレクト、コピーして上のボックスに貼り付けて下さい">
+  <div>*店名を入力し合致する予想変換をセレクト後、コピーして住所欄に貼り付けて下さい</div>
+  <input id= "pac-input", class= "controls", type= "text", placeholder= "吉村家,なんつっ亭,大勝軒etc..">
   <button onclick="copyToClipboard()", type= "button">コピー</button>
   <div id="map" style='height: 300px;'></div></br>
   
