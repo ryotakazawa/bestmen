@@ -20,11 +20,11 @@ end
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
 
-#if Rails.env.production?
-  #bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
-#end
-
 if Rails.env.production?
-  #bind "unix:///tmp/sockets/puma.sock"
-  bind "unix:///var/run/puma/my_app.sock"
+  bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
 end
+
+#if Rails.env.production?
+  #bind "unix:///tmp/sockets/puma.sock"
+  #bind "unix:///var/run/puma/my_app.sock"
+#end
