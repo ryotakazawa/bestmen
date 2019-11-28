@@ -25,5 +25,6 @@ plugin :tmp_restart
 #end
 
 if Rails.env.production?
-  bind "unix:///tmp/sockets/puma.sock"
+  #bind "unix:///tmp/sockets/puma.sock"
+  bind "unix:///var/run/puma/my_app.sock"
 end
