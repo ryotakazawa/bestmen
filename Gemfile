@@ -24,6 +24,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
 gem 'paperclip'
+gem 'pg'
 gem 'puma', '3.9.1'
 gem 'rails'
 gem 'rails_admin'
@@ -43,7 +44,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'spring-commands-rspec'
-  gem 'sqlite3', '1.3.13'
   gem 'webdrivers'
 end
 
@@ -62,7 +62,6 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor' # RailsアプリケーションをHerokuで動作をさせることを目的としているGem
   gem 'mini_racer', platforms: :ruby
 
