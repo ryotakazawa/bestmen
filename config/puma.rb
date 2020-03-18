@@ -7,7 +7,7 @@ threads threads_count, threads_count
 preload_app!
 
 rackup      DefaultRackup
-port        ENV['PORT']     || 3000
+port        ENV['PORT']     || 4000
 environment ENV['RACK_ENV'] || 'development'
 
 on_worker_boot do
@@ -22,5 +22,9 @@ plugin :tmp_restart
 
 if Rails.env.production?
   bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
-  pidfile "#{Rails.root}/tmp/pids/puma.pid"
 end
+
+#if Rails.env.production?
+  #bind "unix:///tmp/sockets/puma.sock"
+  #bind "unix:///var/run/puma/my_app.sock"
+#end
