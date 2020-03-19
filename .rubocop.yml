@@ -1,68 +1,42 @@
-# 将来的には対応する規約の読込
 inherit_from: .rubocop_todo.yml
 
-AllCops:
-  Include:
-    - rubocop-rspec
+require:
+  - rubocop-rails
 
 AllCops:
-  # Rubyバージョン指定
-  TargetRubyVersion: 2.6
-  # 除外
   Exclude:
-    - 'config.ru'
-    - 'bin/**'
-    - 'lib/**'
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
-    - 'node_modules/node-sass/src/libsass/contrib/libsass.spec'
-    - 'node_modules/node-sass/src/libsass/extconf.rb'
-    - 'app/controllers/users/omniauth_callbacks_controller.rb'
-    - !ruby/regexp /old_and_unused\.rb$/
+    - 'vendor/**/*'
+    - 'lib/**/*'
+    - 'node_modules/**/*'
 
-#deviseにより作成されたコードの為除外
-Lint/IneffectiveAccessModifier:
-  Exclude:
-    - 'app/models/user.rb'
-Lint/UselessAccessModifier:
-  Exclude:
-    - 'app/models/user.rb'
-    
-#RSpecやGuarfileは専用のDSLで記述する性質上25 行以下に書き換えるのは現実的ではない
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
 Metrics/BlockLength:
   Exclude:
-    - 'spec/features/pics_spec.rb'
-    - 'spec/features/users_spec.rb'
-    - 'Guardfile'
+    - 'spec/**/*'
 
-Style/GuardClause:
-  Exclude:
-    - 'app/models/ability.rb'
-
-# ガードファイルのデフォルト設定のため除外
-Style/MultilineTernaryOperator:
-  Exclude:
-    - 'Guardfile'
-
-
-# 日本語でのコメントを許可
-AsciiComments:
+Style/AsciiComments:
   Enabled: false
 
-# クラスのコメント必須を無視
-Documentation:
-  Enabled: false
-
-# モジュール名::クラス名の定義を許可
-ClassAndModuleChildren:
-  Enabled: false
-
-# 文字リテラルのイミュータブル宣言を無視（freezeになるのはRuby3以降）
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-# 一行に 150 文字まで書いても OK とする
-Metrics/LineLength:
-  Max: 150
-  
+Style/NumericLiterals:
+  Enabled: false
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - production
+    - staging
