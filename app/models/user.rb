@@ -10,9 +10,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
   validates :name, presence: true
   has_attached_file :image,
-                      :path => ":attachment/user/:id/:style.:extension",
-                      styles: { medium: '300x300>', thumb: '200x200>' },
-                      default_url: '/system/pics/images/no_image_300.png'
+                    path: ':attachment/user/:id/:style.:extension',
+                    styles: { medium: '300x300>', thumb: '200x200>' },
+                    default_url: '/system/pics/images/no_image_300.png'
   validates_attachment_content_type :image, content_type: %r{\Aimage/.*\z}
   before_destroy :validate_testuser
 
@@ -34,10 +34,8 @@ class User < ApplicationRecord
   def self.dumy_email(auth)
     "#{auth.uid}-#{auth.provider}@example.com" # POINT
   end
-  
+
   def validate_testuser
-    throw(:abort) if self.email == "test@bestmen.com"
+    throw(:abort) if email == 'test@bestmen.com'
   end
-  
-  
 end

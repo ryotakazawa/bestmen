@@ -50,7 +50,7 @@ end
 group :development do
   gem 'listen', '3.1.5'
   gem 'rails-erd'
-  gem 'rubocop', require: false
+  gem 'rubocop-rails'
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
   gem 'web-console', '3.5.1'
@@ -62,9 +62,8 @@ group :test do
 end
 
 group :production do
-  gem 'rails_12factor' # RailsアプリケーションをHerokuで動作をさせることを目的としているGem
   gem 'mini_racer', platforms: :ruby
-
+  gem 'rails_12factor' # RailsアプリケーションをHerokuで動作をさせることを目的としているGem
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります
