@@ -80,7 +80,7 @@ class PicsController < ApplicationController
     @pic = current_user.pics.find_by(id: params[:id])
     if @pic.nil?
       flash[:alert] = '権限がありません'
-      redirect_back(fallback_location: root_path) 
+      redirect_back(fallback_location: root_path)
     end
   end
 

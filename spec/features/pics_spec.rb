@@ -5,7 +5,6 @@ require 'rails_helper'
 RSpec.feature 'PicsCreate', type: :feature do
   include SupportModule
   include_context 'setup'
-  
 
   describe 'create' do
     before do
